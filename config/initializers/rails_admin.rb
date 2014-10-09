@@ -22,6 +22,30 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Product do
+    edit do
+      # For RailsAdmin >= 0.5.0
+      field :description, :ck_editor
+      # For RailsAdmin < 0.5.0
+      # field :description do
+      #   ckeditor true
+      # end
+    end
+  end
+
+  config.model Event do
+    edit do
+      # For RailsAdmin >= 0.5.0
+      field :title, :ck_editor
+      field :content, :ck_editor
+      # For RailsAdmin < 0.5.0
+      # field :description do
+      #   ckeditor true
+      # end
+    end
+  end
+
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
