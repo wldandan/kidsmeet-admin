@@ -28,6 +28,9 @@ gem "rails_admin", :git => "git://github.com/sferik/rails_admin.git"
 gem 'mongoid', '~> 4', git: 'git://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 gem 'ckeditor'
+gem 'mime-types'
+gem 'paperclip'
+gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
