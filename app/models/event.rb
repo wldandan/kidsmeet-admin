@@ -8,7 +8,7 @@ class Event
   field :abstract, type: String
   field :content, type: String
   field :main_image_url, type: String
-  field :post_url, type: String
+  field :external_article_url, type: String
   field :apply_end_date, type: Date
   field :apply_number_limitation, type: Integer
 end

@@ -36,6 +36,7 @@ RailsAdmin.config do |config|
   config.model Event do
     edit do
       # For RailsAdmin >= 0.5.0
+      include_all_fields
       field :title, :ck_editor
       field :content, :ck_editor
       # For RailsAdmin < 0.5.0
