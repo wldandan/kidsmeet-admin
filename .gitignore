@@ -5,6 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
+/public/ckeditor_assets/*
 /.bundle
 
 # Ignore the default SQLite database.
