@@ -4,9 +4,8 @@ class Ckeditor::Picture < Ckeditor::Asset
                             :url  => "/ckeditor_assets/pictures/:id/:style_:basename.:extension",
                             :path => ":rails_root/public/ckeditor_assets/pictures/:id/:style_:basename.:extension",
                             :styles => {
-                                :content => "800>",
                                 :thumb => '118x100#',
-                                :original => {
+                                :content => {
                                     :geometry       => "800>",
                                     :watermark_path => "#{Rails.root}/public/images/logo.png"
                                 },
