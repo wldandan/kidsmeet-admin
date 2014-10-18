@@ -27,6 +27,17 @@ GIT
       safe_yaml (~> 1.0)
       sass-rails (>= 4.0, < 6)
 
+GIT
+  remote: git://github.com/vikewoods/paperclip-watermark.git
+  revision: 3dbe35d348c193a6894c0d53d927870f71b4eceb
+  specs:
+    paperclip-watermark (1.0.0)
+      minitest
+      minitest-reporters
+      paperclip (>= 2.3.8)
+      rails
+      rake
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -56,6 +67,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    ansi (1.4.3)
     arel (5.0.1.20140414130214)
     bson (2.3.0)
     bson_ext (1.5.1)
@@ -100,6 +112,11 @@ GEM
     mime-types (2.4.1)
     mini_portile (0.6.0)
     minitest (5.4.2)
+    minitest-reporters (1.0.6)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     mongoid-paperclip (0.0.9)
       paperclip (>= 2.3.6)
     moped (2.0.0)
@@ -143,6 +160,7 @@ GEM
     rdoc (4.1.2)
       json (~> 1.4)
     remotipart (1.2.1)
+    ruby-progressbar (1.6.0)
     safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -187,6 +205,7 @@ DEPENDENCIES
   mongoid (~> 4)!
   mongoid-paperclip
   paperclip
+  paperclip-watermark!
   rails (= 4.1.6)
   rails_admin!
   sass-rails (~> 4.0.3)

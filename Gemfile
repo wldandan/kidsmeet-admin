@@ -31,6 +31,7 @@ gem 'ckeditor'
 gem 'mime-types'
 gem 'paperclip'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+gem 'paperclip-watermark', :github => 'vikewoods/paperclip-watermark'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
