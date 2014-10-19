@@ -1,0 +1,13 @@
+defaults: &defaults
+  image_host: http://admin.kidmeets.cn
+
+development:
+   <<: *defaults
+   image_host: http://localhost:9292
+
+production:
+   <<: *defaults
+   image_host: http://admin.kidmeets.cn
+
+test:
+   <<: *defaults
