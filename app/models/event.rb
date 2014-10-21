@@ -6,15 +6,13 @@ class Event
   field :title, type: String
   field :category, type: String
   field :abstract, type: String
+  field :address, type: String
   field :content, type: String
 
-  field :happen_where, type: String
-  field :happen_when, type: String
 
   field :main_image_url, type: String
-
+  field :expired_at, type: DateTime
   field :is_published, type: Boolean, default: true
-  field :is_expired, type: Boolean, default: false
 
   embeds_one :restrict
   accepts_nested_attributes_for :restrict
@@ -24,5 +22,7 @@ class Event
   validates :abstract, presence: true
   validates :content, presence: true
   validates :main_image_url, presence: true
+  validates :expired_at, presence: true
+  validates :address, presence: true
   validates :restrict, presence: true
 end

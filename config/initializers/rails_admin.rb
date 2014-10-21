@@ -38,21 +38,19 @@ RailsAdmin.config do |config|
       # For RailsAdmin >= 0.5.0
       #include_all_fields
       field :title do
-        column_width 2000
+        column_width 200
       end
 
       field :category
-
       field :abstract
+      field :address
+      field :main_image_url
+      field :expired_at
+      field :restrict
+
+      field :is_published
 
       field :content, :ck_editor
-
-      field :main_image_url
-
-      field :restrict
-      field :is_published
-      field :is_expired
-
       # For RailsAdmin < 0.5.0
       # field :description do
       #   ckeditor true
