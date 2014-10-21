@@ -43,7 +43,7 @@ RailsAdmin.config do |config|
 
       field :category
 
-      field :abstract, :ck_editor
+      field :abstract
 
       field :content, :ck_editor
 
