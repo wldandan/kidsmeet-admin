@@ -36,9 +36,23 @@ RailsAdmin.config do |config|
   config.model Event do
     edit do
       # For RailsAdmin >= 0.5.0
-      include_all_fields
-      field :title, :ck_editor
+      #include_all_fields
+      field :title do
+        column_width 2000
+      end
+
+      field :category
+
+      field :abstract, :ck_editor
+
       field :content, :ck_editor
+
+      field :main_image_url
+
+      field :restrict
+      field :is_published
+      field :is_expired
+
       # For RailsAdmin < 0.5.0
       # field :description do
       #   ckeditor true
