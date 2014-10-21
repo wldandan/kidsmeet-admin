@@ -8,6 +8,9 @@ class Event
   field :abstract, type: String
   field :content, type: String
 
+  field :happen_where, type: String
+  field :happen_when, type: String
+
   field :main_image_url, type: String
 
   field :is_published, type: Boolean, default: true
