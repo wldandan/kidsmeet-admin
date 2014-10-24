@@ -1,5 +1,6 @@
 defaults: &defaults
   image_host: http://admin.kidmeets.cn
+  qiniu_bucket: kidmeets-images
 
 development:
    <<: *defaults
@@ -8,6 +9,7 @@ development:
 production:
    <<: *defaults
    image_host: http://admin.kidmeets.cn
+   qiniu_bucket: kidmeets-images
 
 test:
    <<: *defaults
