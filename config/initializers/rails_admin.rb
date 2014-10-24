@@ -44,6 +44,7 @@ RailsAdmin.config do |config|
       field :category
       field :abstract
       field :address
+      field :duration
       field :main_image_url
       field :expired_at
       field :restrict
