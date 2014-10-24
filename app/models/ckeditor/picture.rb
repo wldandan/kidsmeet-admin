@@ -2,7 +2,7 @@ class Ckeditor::Picture < Ckeditor::Asset
   has_mongoid_attached_file :data,
                             :processors => [:watermark],
                             :url  => "#{CONFIG['image_host']}/ckeditor_assets/pictures/:id/:style_:basename.:extension",
-                            :path => ":rails_root/public/ckeditor_assets/pictures/:id/:style_:basename.:extension",
+                            :path => ":id/:style_:basename.:extension",
                             :styles => {
                                 :thumb => '118x100#',
                                 :content => {
