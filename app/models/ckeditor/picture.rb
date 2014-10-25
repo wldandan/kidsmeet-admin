@@ -5,15 +5,18 @@ class Ckeditor::Picture < Ckeditor::Asset
                             :path => ":id/:style_:basename.:extension",
                             :styles => {
                                 :thumb => '118x100#',
-                                :content => {
-                                    :geometry       => "800>",
+                                :large => {
+                                    :geometry       => "1024x768#",
                                     :watermark_path => "#{Rails.root}/public/images/logo.png"
                                 },
                                 :medium => {
                                     :geometry       => "700x469#",
                                     :watermark_path => "#{Rails.root}/public/images/logo.png"
+                                },
+                                :original => {
+                                    :watermark_path => "#{Rails.root}/public/images/logo.png"
                                 }
-                            }
+  }
   validates_attachment_size :data, :less_than => 2.megabytes
   validates_attachment_presence :data
   has_attached_file :image
