@@ -4,20 +4,14 @@ class Ckeditor::Picture < Ckeditor::Asset
                             :url  => "#{CONFIG['image_host']}/ckeditor_assets/pictures/:id/:style_:basename.:extension",
                             :path => ":id/:style_:basename.:extension",
                             :styles => {
+                                :thumb => '118x100#',
                                 :large => {
-                                    :geometry       => "1024x768#",
-                                    :watermark_path => "#{Rails.root}/public/images/km-logo.png"
-                                },
-                                :content => {
-                                    :geometry       => "1024x768#",
-                                    :watermark_path => "#{Rails.root}/public/images/km-logo.png"
+                                    :geometry       => "1024>",
+                                    :watermark_path => "#{Rails.root}/public/images/km-large-logo.png"
                                 },
                                 :medium => {
-                                    :geometry       => "700x469#",
-                                    :watermark_path => "#{Rails.root}/public/images/km-logo.png"
-                                },
-                                :original => {
-                                    :watermark_path => "#{Rails.root}/public/images/km-logo.png"
+                                    :geometry       => "700>",
+                                    :watermark_path => "#{Rails.root}/public/images/km-medium-logo.png"
                                 }
                             }
   validates_attachment_size :data, :less_than => 2.megabytes
