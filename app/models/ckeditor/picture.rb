@@ -10,7 +10,7 @@ class Ckeditor::Picture < Ckeditor::Asset
                                     :watermark_path => "#{Rails.root}/public/images/km-large-logo.png"
                                 },
                                 :medium => {
-                                    :geometry       => "700>",
+                                    :geometry       => "700x469#",
                                     :watermark_path => "#{Rails.root}/public/images/km-medium-logo.png"
                                 }
                             }
