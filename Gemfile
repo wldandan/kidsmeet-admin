@@ -1,8 +1,11 @@
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,19 +26,17 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-
-gem "rails_admin", :git => "git://github.com/sferik/rails_admin.git"
-gem 'mongoid', '~> 4', git: 'git://github.com/mongoid/mongoid.git'
-gem 'bson_ext'
+gem 'rails_admin'
 gem 'ckeditor'
+#gem 'paperclip','3.4.2'
 gem 'paperclip'
-gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 
 # Adding watermark into photos
 gem 'paperclip-watermark', :github => 'vikewoods/paperclip-watermark'
 
 # Upload image to qiniu storage service
 gem 'paperclip-qiniu'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

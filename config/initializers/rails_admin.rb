@@ -22,16 +22,16 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.model Product do
-    edit do
-      # For RailsAdmin >= 0.5.0
-      field :description, :ck_editor
-      # For RailsAdmin < 0.5.0
-      # field :description do
-      #   ckeditor true
-      # end
-    end
-  end
+  #config.model Product do
+  #  edit do
+  #    # For RailsAdmin >= 0.5.0
+  #    #field :description, :ck_editor
+  #    # For RailsAdmin < 0.5.0
+  #    # field :description do
+  #    #   ckeditor true
+  #    # end
+  #  end
+  #end
 
   config.model Event do
     edit do
@@ -43,11 +43,11 @@ RailsAdmin.config do |config|
 
       field :category
       field :abstract
-      field :address
+      #field :address
       field :duration
       field :main_image_url
       field :expired_at
-      field :restrict
+      #field :restrict
 
       field :is_published
 

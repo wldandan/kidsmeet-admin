@@ -1,5 +1,5 @@
 class Ckeditor::AttachmentFile < Ckeditor::Asset
-  has_mongoid_attached_file :data,
+  has_attached_file :data,
                             :url => "/ckeditor_assets/attachments/:id/:filename",
                             :path => ":rails_root/public/ckeditor_assets/attachments/:id/:filename"
 
