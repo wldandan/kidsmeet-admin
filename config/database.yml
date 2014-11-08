@@ -50,8 +50,8 @@ test: &test
 production:
   <<: *default
   database: kidsmeet
-  username: kidsmeet
-  password: <%= ENV['KIDSMEET-WEB_DATABASE_PASSWORD'] %>
+  username: <%= ENV['KIDSMEET_DB_USERNAME'] %>
+  password: <%= ENV['KIDSMEET_DB_PASSWORD'] %>
 
 cucumber:
   <<: *test
