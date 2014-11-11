@@ -46,9 +46,8 @@ RailsAdmin.config do |config|
       #field :address
       field :duration
       field :main_image_url
-      field :expired_at
-      #field :restrict
-
+      field :start_time
+      field :end_time
       field :is_published
 
       field :content, :ck_editor
