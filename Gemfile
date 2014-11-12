@@ -28,8 +28,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'rails_admin'
 gem 'ckeditor'
-#gem 'paperclip','3.4.2'
-gem 'paperclip'
+gem 'paperclip','3.4.2'
 
 # Adding watermark into photos
 gem 'paperclip-watermark', :github => 'vikewoods/paperclip-watermark'
