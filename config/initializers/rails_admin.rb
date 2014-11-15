@@ -42,6 +42,7 @@ RailsAdmin.config do |config|
       end
 
       field :category
+      field :contact_phone
       field :abstract
       #field :address
       field :duration

@@ -21,5 +21,14 @@ class Event < ActiveRecord::Base
     main_image_url.gsub('medium','original')
   end
 
+  def start_time
+  end
+
+  def end_time
+  end
+
+  def contact_phone
+  end
+
 
 end
