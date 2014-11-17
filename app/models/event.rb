@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  #has_many :attendances
+  has_many :attendances
 
   def adults_number
     attendances.inject(0) { |result, item|
@@ -14,11 +14,20 @@ class Event < ActiveRecord::Base
   end
 
   def is_expired?
-    false
+    end_time < Time.new
   end
 
   def detail_image_url
-    main_image_url.gsub('medium','original')
+    main_image_url.gsub('medium','large')
+  end
+
+  def mail_image_url
+    main_image_url.gsub('medium','wechat')
+  end
+
+
+  def users
+    #User.in(id: attendances.map(&:user_id))
   end
 
   def start_time

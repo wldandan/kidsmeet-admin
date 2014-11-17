@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 804b4edc1d8d7ca9865170e34f26da7d66f6d0d5
+  specs:
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+
+GIT
   remote: git://github.com/vikewoods/paperclip-watermark.git
   revision: 3dbe35d348c193a6894c0d53d927870f71b4eceb
   specs:
@@ -92,11 +102,6 @@ GEM
     nokogiri (1.6.4)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
-    paperclip (3.4.2)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
     paperclip-qiniu (0.1.0)
       paperclip
       qiniu-rs (~> 3.0)
@@ -190,7 +195,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
-  paperclip (= 3.4.2)
+  paperclip!
   paperclip-qiniu
   paperclip-watermark!
   rails (= 4.1.6)
