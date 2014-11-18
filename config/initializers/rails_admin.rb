@@ -1,26 +1,28 @@
 RailsAdmin.config do |config|
 
+  config.main_app_name = ['Kidsmeet Admin', 'Admin']
+
   ### Popular gems integration
 
   ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  config.authenticate_with do
+    warden.authenticate! scope: :agent
+  end
+  config.current_user_method(&:current_agent)
 
   ## == Cancan ==
-  # config.authorize_with :cancan
+  config.authorize_with :cancan
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
-  config.authorize_with do
-    authenticate_or_request_with_http_basic('Site Message') do |username, password|
-      username == 'admin' && password == 'admin'
-    end
-  end
+  #config.authorize_with do
+  #  authenticate_or_request_with_http_basic('Site Message') do |username, password|
+  #    username == 'admin' && password == 'admin'
+  #  end
+  #end
 
   #config.model Product do
   #  edit do

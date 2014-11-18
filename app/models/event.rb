@@ -30,14 +30,5 @@ class Event < ActiveRecord::Base
     #User.in(id: attendances.map(&:user_id))
   end
 
-  def start_time
-  end
-
-  def end_time
-  end
-
-  def contact_phone
-  end
-
 
 end

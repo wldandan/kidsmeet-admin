@@ -27,8 +27,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'rails_admin'
+gem 'devise'
+gem 'cancancan'
 gem 'ckeditor'
-gem 'paperclip', :github => 'thoughtbot/paperclip'
+gem 'paperclip','3.4.2'
 
 # Adding watermark into photos
 gem 'paperclip-watermark', :github => 'vikewoods/paperclip-watermark'

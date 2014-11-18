@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106092120) do
+ActiveRecord::Schema.define(version: 20141118153730) do
+
+  create_table "agents", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "agents", ["email"], name: "index_agents_on_email", unique: true, using: :btree
+  add_index "agents", ["reset_password_token"], name: "index_agents_on_reset_password_token", unique: true, using: :btree
+
+  create_table "agents_roles", id: false, force: true do |t|
+    t.integer "agent_id", null: false
+    t.integer "role_id",  null: false
+  end
 
   create_table "attendances", force: true do |t|
     t.integer  "event_id"
@@ -47,14 +70,18 @@ ActiveRecord::Schema.define(version: 20141106092120) do
     t.string   "abstract"
     t.text     "content"
     t.string   "main_image_url"
-    t.date     "apply_end_date"
-    t.datetime "expired_at"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "contact_phone"
     t.string   "duration"
     t.string   "address"
     t.boolean  "is_published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
