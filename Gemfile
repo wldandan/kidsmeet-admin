@@ -48,5 +48,10 @@ gem 'paperclip-qiniu'
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
+
 # gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem 'byebug'
+end
 
