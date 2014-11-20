@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20141118153730) do
 
   create_table "agents", force: true do |t|
+    t.string   "name",                   default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20141118153730) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "events", force: true do |t|
+    t.integer  "agent_id"
     t.string   "title"
     t.string   "category"
     t.string   "abstract"

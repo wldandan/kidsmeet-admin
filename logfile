@@ -1,0 +1,65 @@
+LOG:  database system was shut down at 2014-11-19 11:57:06 CST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "leiwang" does not exist
+ERROR:  unrecognized configuration parameter "databases"
+STATEMENT:  show databases
+	;
+ERROR:  syntax error at or near "quit" at character 1
+STATEMENT:  quit;
+ERROR:  database "listprices" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE listprices;
+	
+FATAL:  database "listprices" does not exist
+FATAL:  database "listprices" does not exist
+FATAL:  database "leiwang" does not exist
+ERROR:  relation "price_listst" does not exist at character 15
+STATEMENT:  select * from price_listst
+ERROR:  syntax error at or near "*" at character 8
+STATEMENT:  delete * from price_lists
+ERROR:  null value in column "price_list_id" violates not-null constraint
+DETAIL:  Failing row contains (1, null, {"price_list_id":null,"price_cents":300.0}, 2014-11-19 09:35:19.191754, 2014-11-19 09:35:19.191754).
+STATEMENT:  INSERT INTO "located_prices" ("created_at", "located_price_item", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "price_list_id" violates not-null constraint
+DETAIL:  Failing row contains (2, null, {"price_list_id":"","price_cents":300.0}, 2014-11-19 09:35:41.982513, 2014-11-19 09:35:41.982513).
+STATEMENT:  INSERT INTO "located_prices" ("created_at", "located_price_item", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "price_list_id" violates not-null constraint
+DETAIL:  Failing row contains (3, null, {"price_list_id":"11","price_cents":300.0}, 2014-11-19 09:36:16.968765, 2014-11-19 09:36:16.968765).
+STATEMENT:  INSERT INTO "located_prices" ("created_at", "located_price_item", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "price_list_id" violates not-null constraint
+DETAIL:  Failing row contains (4, null, {"price_list_id":"12","price_cents":300.0}, 2014-11-19 09:37:20.679778, 2014-11-19 09:37:20.679778).
+STATEMENT:  INSERT INTO "located_prices" ("created_at", "located_price_item", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "price_list_id" violates not-null constraint
+DETAIL:  Failing row contains (5, null, {"price_list_id":14,"price_cents":300.0}, 2014-11-19 09:37:59.191251, 2014-11-19 09:37:59.191251).
+STATEMENT:  INSERT INTO "located_prices" ("created_at", "located_price_item", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "price_list_id" violates not-null constraint
+DETAIL:  Failing row contains (6, null, {"price_list_id":"16","price_cents":300.0}, 2014-11-19 09:40:12.834841, 2014-11-19 09:40:12.834841).
+STATEMENT:  INSERT INTO "located_prices" ("created_at", "located_price_item", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "price_list_id" violates not-null constraint
+DETAIL:  Failing row contains (7, null, {"price_list_id":"17","price_cents":300.0}, 2014-11-19 09:44:24.997713, 2014-11-19 09:44:24.997713).
+STATEMENT:  INSERT INTO "located_prices" ("created_at", "located_price_item", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  database "list_price_provider" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE list_price_provider;
+ERROR:  database "list_price_provider" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE list_price_provider;
+ERROR:  database "list_price_provider" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE list_price_provider;
+ERROR:  database "list_price_provider" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE list_price_provider;
+	
+ERROR:  relation "price_list" does not exist at character 15
+STATEMENT:  select * from price_list
+ERROR:  relation "price_list" does not exist at character 15
+STATEMENT:  select * from price_list
+ERROR:  syntax error at or near "from" at character 36
+STATEMENT:  delete from located_prices
+	
+	delete from price_lists
+ERROR:  operator does not exist: text = integer at character 94
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+STATEMENT:  SELECT "located_prices".* FROM "located_prices"  WHERE (located_price_item->>'price_list_id' = 3)

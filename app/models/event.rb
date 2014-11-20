@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   has_many :attendances
+  belongs_to :agent
 
   def adults_number
     attendances.inject(0) { |result, item|

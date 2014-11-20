@@ -13,12 +13,13 @@ class Ability
         can :read, :all
       end
     else
-      can :read, Event, :contact_phone => user.id.to_s
-      can :update, Event, :is_published => true
-      can :create, Event
+      can :read, Event, agent_id: user.id if user
+      can :update, Event, agent_id: user.id if user
+      can :create, Event, agent_id: user.id if user
       can :access, :rails_admin
       can :dashboard
-      can :manage, :all
+
+      can :manage, Ckeditor::Picture
     end
 
       # Define abilities for the passed in user here. For example:

@@ -24,6 +24,9 @@ RailsAdmin.config do |config|
   #  end
   #end
 
+  #config.audit_with :history, User
+
+
   #config.model Product do
   #  edit do
   #    # For RailsAdmin >= 0.5.0
@@ -36,7 +39,7 @@ RailsAdmin.config do |config|
   #end
 
   config.model Event do
-    edit do
+    create do
       # For RailsAdmin >= 0.5.0
       #include_all_fields
       field :title do
