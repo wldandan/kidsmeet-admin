@@ -62,14 +62,50 @@ RailsAdmin.config do |config|
       #   ckeditor true
       # end
     end
+
+    edit do
+      field :title do
+        column_width 200
+      end
+
+      field :category
+      field :contact_phone
+      field :abstract
+      #field :address
+      field :duration
+      field :main_image_url
+      field :start_time
+      field :end_time
+      field :is_published
+
+      field :content, :ck_editor
+      # For RailsAdmin < 0.5.0
+      # field :description do
+      #   ckeditor true
+      # end
+    end
+
   end
 
+  config.model Agent do
+    list do
+      field :username
+      field :email
+      field :sign_in_count
+      field :last_sign_in_at
+    end
+
+    edit do
+      field :username
+      field :email
+    end
+  end
 
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
     new
-    export
+    #export
     bulk_delete
     show
     edit

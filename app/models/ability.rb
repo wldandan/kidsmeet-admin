@@ -16,10 +16,17 @@ class Ability
       can :read, Event, agent_id: user.id if user
       can :update, Event, agent_id: user.id if user
       can :create, Event, agent_id: user.id if user
+
+      can :read, Agent, id: user.id if user
+      can :update, Agent, id: user.id if user
+      #can :create, Agent, id: user.id if user
+
       can :access, :rails_admin
       can :dashboard
 
       can :manage, Ckeditor::Picture
+      #can :manage, Event
+      #can :manage, :all
     end
 
       # Define abilities for the passed in user here. For example:
