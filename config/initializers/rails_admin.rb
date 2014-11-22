@@ -26,18 +26,6 @@ RailsAdmin.config do |config|
 
   #config.audit_with :history, User
 
-
-  #config.model Product do
-  #  edit do
-  #    # For RailsAdmin >= 0.5.0
-  #    #field :description, :ck_editor
-  #    # For RailsAdmin < 0.5.0
-  #    # field :description do
-  #    #   ckeditor true
-  #    # end
-  #  end
-  #end
-
   config.model Event do
 
     navigation_label '资源管理'
@@ -58,8 +46,20 @@ RailsAdmin.config do |config|
     end
 
     create do
-      # For RailsAdmin >= 0.5.0
-      #include_all_fields
+      field :title
+      field :category
+      field :contact_phone
+      field :abstract
+      field :address
+      field :duration
+      field :main_image_url
+      field :start_time
+      field :end_time
+      field :is_published
+      field :content, :ck_editor
+    end
+
+    edit do
       field :title
       field :category
       field :contact_phone
@@ -72,32 +72,6 @@ RailsAdmin.config do |config|
       field :is_published
 
       field :content, :ck_editor
-      # For RailsAdmin < 0.5.0
-      # field :description do
-      #   ckeditor true
-      # end
-    end
-
-    edit do
-      field :title do
-        column_width 200
-      end
-
-      field :category
-      field :contact_phone
-      field :abstract
-      #field :address
-      field :duration
-      field :main_image_url
-      field :start_time
-      field :end_time
-      field :is_published
-
-      field :content, :ck_editor
-      # For RailsAdmin < 0.5.0
-      # field :description do
-      #   ckeditor true
-      # end
     end
 
   end
@@ -106,6 +80,24 @@ RailsAdmin.config do |config|
     visible do
       # controller bindings is available here. Example:
       bindings[:controller].current_agent.has_role?(:superadmin)
+    end
+  end
+
+  config.model Ckeditor::Picture do
+    navigation_label '附件管理'
+    label_plural '图片'
+    label '图片'
+
+    list do
+      field :id
+      field :title
+      field :width
+      field :height
+      field :data
+    end
+
+    create do
+      field :data
     end
   end
 

@@ -29,4 +29,8 @@ class Ckeditor::Picture < Ckeditor::Asset
   def url_content
     url(:content)
   end
+
+  def title
+    data_file_name
+  end
 end

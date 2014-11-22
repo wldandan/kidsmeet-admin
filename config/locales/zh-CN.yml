@@ -47,6 +47,9 @@ zh-CN:
       event:
         one: 亲子活动
         other: 亲子活动
+      ckeditor/picture:
+        one: 图片
+        other: 图片
     attributes:
       event:
         id: 编号
