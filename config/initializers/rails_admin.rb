@@ -1,6 +1,6 @@
 RailsAdmin.config do |config|
 
-  config.main_app_name = ['Kidsmeet Admin', 'Admin']
+  config.main_app_name = ['咖萌亲子', '管理后台']
 
   ### Popular gems integration
 
@@ -87,17 +87,10 @@ RailsAdmin.config do |config|
 
   end
 
-  config.model Agent do
-    list do
-      field :username
-      field :email
-      field :sign_in_count
-      field :last_sign_in_at
-    end
-
-    edit do
-      field :username
-      field :email
+  config.model 'Agent' do
+    visible do
+      # controller bindings is available here. Example:
+      bindings[:controller].current_agent.has_role?(:superadmin)
     end
   end
 
