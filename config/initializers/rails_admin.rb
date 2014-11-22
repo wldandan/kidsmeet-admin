@@ -39,17 +39,30 @@ RailsAdmin.config do |config|
   #end
 
   config.model Event do
+
+    navigation_label 'League related'
+
+    list do
+      field :id
+      field :title
+      field :category
+      field :abstract
+      field :contact_phone
+      field :address
+      field :main_image_url
+      field :start_time
+      field :end_time
+      field :is_published
+    end
+
     create do
       # For RailsAdmin >= 0.5.0
       #include_all_fields
-      field :title do
-        column_width 200
-      end
-
+      field :title
       field :category
       field :contact_phone
       field :abstract
-      #field :address
+      field :address
       field :duration
       field :main_image_url
       field :start_time
