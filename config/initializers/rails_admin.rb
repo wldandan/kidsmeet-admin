@@ -40,7 +40,9 @@ RailsAdmin.config do |config|
 
   config.model Event do
 
-    navigation_label 'League related'
+    navigation_label '资源管理'
+    label_plural '亲子活动'
+    label '亲子活动'
 
     list do
       field :id

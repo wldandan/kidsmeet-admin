@@ -24,10 +24,11 @@ en:
   activerecord:
       models:
         event:
-          one: 活动管理
-          other: 活动管理
+          one: 亲子活动
+          other: 亲子活动
       attributes:
         event:
+          id: 编号
           title: 标题
           category: 活动类型
           abstract: 活动简介
