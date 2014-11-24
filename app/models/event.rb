@@ -41,5 +41,9 @@ class Event < ActiveRecord::Base
     #User.in(id: attendances.map(&:user_id))
   end
 
+  def duration
+    end_time - start_time
+  end
+
 
 end

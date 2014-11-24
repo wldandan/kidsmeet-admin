@@ -91,14 +91,32 @@ RailsAdmin.config do |config|
     list do
       field :id
       field :title
+      field :data
       field :width
       field :height
-      field :data
     end
+
+    show do
+      field :id
+      field :title
+      field :data
+      field :width
+      field :height
+    end
+
 
     create do
       field :data
+      field :width
+      field :height
     end
+
+    edit do
+      field :data
+      field :width
+      field :height
+    end
+
   end
 
   config.actions do

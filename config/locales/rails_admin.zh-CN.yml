@@ -1,4 +1,4 @@
-en:
+zh-CN:
   admin:
     js:
       true: True
@@ -7,16 +7,16 @@ en:
       is_blank: Is blank
       date: Date ...
       between_and_: Between ... and ...
-      today: Today
-      yesterday: Yesterday
-      this_week: This week
-      last_week: Last week
+      today: 今天
+      yesterday: 昨天
+      this_week: 本周
+      last_week: 上周
       number: Number ...
-      contains: Contains
+      contains: 包含
       is_exactly: Is exactly
       starts_with: Starts with
       ends_with: Ends with
-    loading: "Loading..."
+    loading: "加载中..."
     home:
       name: "Home"
     pagination:
@@ -45,7 +45,7 @@ en:
     flash:
       successful: "%{name}%{action}成功"
       error: "%{name}%{action}失败"
-      noaction: "No actions were taken"
+      noaction: "取消"
       model_not_found: "Model '%{model}' could not be found"
       object_not_found: "%{model} with id '%{id}' could not be found"
     table_headers:
@@ -120,10 +120,10 @@ en:
       char_length_of: "长度"
       save: "保存"
       save_and_add_another: "保存&新建"
-      save_and_edit: "保存&继续编辑"
+      save_and_edit: "保存&编辑"
       all_of_the_following_related_items_will_be_deleted: "以及相关信息"
       are_you_sure_you_want_to_delete_the_object: "确定删除该%{model_name}?"
-      confirmation: "确定您的操作吗?"
+      confirmation: "确定?"
       bulk_delete: "选中的信息将被一起删除？"
       new_model: "%{name} (new)"
     export:

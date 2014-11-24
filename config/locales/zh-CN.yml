@@ -39,9 +39,8 @@ zh-CN:
 
   time:
     formats:
-      date_format: "%Y-%m-%d"
-      time_format: "'%Y-%m-%d %H:%M:%S"
-
+      date_format: "%Y年%m月%d日"
+      time_format: "%Y年%m月%d日 %H:%M:%S"
   activerecord:
     models:
       event:
@@ -63,7 +62,12 @@ zh-CN:
         is_published: 是否发布
         start_time: 开始时间
         end_time: 结束时间
-
+      ckeditor/picture:
+        id: 编号
+        title: 标题
+        data: 图片
+        width: 宽度
+        height: 高度
   date:
     abbr_day_names:
     - 日
@@ -97,8 +101,8 @@ zh-CN:
     - 星期六
     formats:
       default: ! '%Y-%m-%d'
-      long: ! '%Y年%b%d日'
-      short: ! '%b%d日'
+      long: ! '%Y-%m-%d'
+#      short: ! '%b%d日'
     month_names:
     -
     - 一月
@@ -262,9 +266,9 @@ zh-CN:
   time:
     am: 上午
     formats:
-      default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
-      long: ! '%Y年%b%d日 %H:%M'
-      short: ! '%b%d日 %H:%M'
-    pm: 下午
+      default: ! '%Y-%m-%d'
+      long: ! '%Y-%m-%d %H:%M'
+#      short: ! '%m月%d日 %H:%M'
+#    pm: 下午
 
 
