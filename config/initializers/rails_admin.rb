@@ -65,7 +65,6 @@ RailsAdmin.config do |config|
       field :contact_phone
       field :abstract
       field :address
-      field :duration
       field :main_image_url
       field :start_time
       field :end_time

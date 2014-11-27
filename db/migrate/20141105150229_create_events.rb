@@ -10,10 +10,8 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :start_time
       t.datetime :end_time
       t.string :contact_phone
-      t.string :duration
       t.string :address
-      t.boolean :is_published
-
+      t.boolean :is_published, :default => true
       t.timestamps
     end
   end
