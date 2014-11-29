@@ -2,10 +2,10 @@
   .form-signed-out
     %h2.form-signed-out-heading
       Forgot password?
-    = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:method => :post}) do |f|
-      = devise_error_messages!
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+      -#= devise_error_messages!
       = f.label 'Email Address', :class => 'sr-only'
       = f.email_field :email, :class => 'form-control', :placeholder => 'Email Address'
-      %button{:type => "submit", :value => "Login", :class => 'btn btn-lg btn-primary btn-block btn-low'}
+      %button{:type => "submit", :value => "Reset", :class => 'btn btn-lg btn-primary btn-block btn-low'}
         Send email
       = render 'devise/shared/links'
