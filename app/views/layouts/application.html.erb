@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AppAdmin</title>
+  <title>咖萌-聚焦亲子活动的社交平台</title>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
   <%= csrf_meta_tags %>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
 </head>
+
 <body>
+<%= render("shared/navigator") %>
 
-
-<% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-<p class="navbar-text pull-right">
-  <% if agent_signed_in? %>
-      Logged in as <strong><%= current_agent.email %></strong>.
-      <%= link_to 'Edit profile', edit_agent_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_agent_session_path, method: :delete, :class => 'navbar-link'  %>
-  <% else %>
-      <%= link_to "Sign up", new_agent_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_agent_session_path, :class => 'navbar-link'  %>
-  <% end %>
-
-
-<%= yield %>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        if ($('textarea.ckeditor').length > 0) {
-            var data = $('textarea.ckeditor');
-            $.each(data, function(i) {
-                CKEDITOR.replace(data[i].id);
-            });
-        }
-    });
-</script>
+<!-- Page Content -->
+<div class="container">
+  <%=yield%>
+</div>
+<%= render("shared/about") %>
+<%= render("shared/footer") %>
+<!-- /.container -->
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>
