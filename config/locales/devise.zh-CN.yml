@@ -37,3 +37,16 @@ zh-CN:
         subject: '重置密码信息'
       unlock_instructions:
         subject: '解锁信息'
+    registrations:
+      destroyed: "您的账户已注销. "
+      signed_up: "欢迎! 您已成功注册."
+      signed_up_but_inactive: "您已成功注册，等待激活中."
+      signed_up_but_locked: "您已成功注册. 账户已被锁定."
+      signed_up_but_unconfirmed: "确认邮件已发送至您邮箱. 请点击链接激活."
+      update_needs_confirmation: "账户更新成功, 邮箱等待确认中."
+      updated: "账户更新成功."
+    errors:
+      messages:
+        not_saved:
+          one: "无法保存"
+          other: "无法保存"
