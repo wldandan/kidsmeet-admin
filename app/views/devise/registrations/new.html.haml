@@ -1,0 +1,17 @@
+.signed-out
+  .form-signed-out
+    %h2.form-signed-out-heading
+      Sign up
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      -#= devise_error_messages!
+      = f.label 'User Name', :class => 'sr-only'
+      = f.text_field :name, :class => 'form-control', :placeholder => 'User Name'
+      = f.label 'Email Address', :class => 'sr-only'
+      = f.email_field :email, :class => 'form-control', :placeholder => 'Email Address'
+      = f.label 'Password', :class => 'sr-only'
+      = f.password_field :password,  :class => 'form-control', :placeholder => 'Password'
+      = f.label 'Password Confirmation', :class => 'sr-only'
+      = f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Password Confirmation'
+      %button{:type => "submit", :value => "Reset", :class => 'btn btn-lg btn-primary btn-block btn-low'}
+        Sign up
+      = render 'devise/shared/links'
