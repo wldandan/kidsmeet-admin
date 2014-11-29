@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :agents
+  devise_for :agents, :controllers => {
+      :registrations => :registrations,
+      :sessions => :sessions,
+      :passwords => :passwords
+  }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
 
