@@ -37,6 +37,7 @@ gem 'paperclip-watermark', :github => 'vikewoods/paperclip-watermark'
 
 # Upload image to qiniu storage service
 gem 'paperclip-qiniu'
+gem 'haml-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
