@@ -1,6 +1,6 @@
 .container {
   width: 80%;
-  height: 600px;
+  min-height: 600px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -109,4 +109,8 @@ footer .footer-below {
 
 .field_with_errors {
   width: 270px;
+}
+
+#error_explanation {
+  margin-left: -100px;
 }

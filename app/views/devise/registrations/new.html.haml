@@ -2,7 +2,7 @@
   .form-signed-out
     %h2.form-signed-out-heading
       注册
-    -#= devise_error_messages!
+    = devise_error_messages!
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = f.label 'User Name', :class => 'sr-only'
       = f.text_field :username, :class => 'form-control top-line', :placeholder => '用户名'
@@ -15,4 +15,4 @@
       %button{:type => "submit", :value => "Reset", :class => 'btn btn-lg btn-primary btn-block btn-low'}
         注册
       %p.notification
-        已预测用户? #{link_to "登陆", new_session_path(resource_name)}.
+        已注册用户? #{link_to "登陆", new_session_path(resource_name)}.
