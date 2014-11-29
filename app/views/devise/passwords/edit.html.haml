@@ -1,0 +1,14 @@
+.signed-out
+  .form-signed-out
+    %h2.form-signed-out-heading
+      修改密码
+  %table
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+      -#= devise_error_messages!
+      = f.hidden_field :reset_password_token
+      = f.label "New password", :class => 'sr-only'
+      = f.password_field :password, :class => 'form-control', :placeholder => '新密码'
+      = f.label "Confirm new password", :class => 'sr-only'
+      = f.password_field :password_confirmation, :class => 'form-control', :placeholder => '确认密码'
+      %button{:type => "submit", :value => "Reset", :class => 'btn btn-lg btn-primary btn-block btn-low'}
+        修改密码
