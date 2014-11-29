@@ -3,7 +3,7 @@
     %h2.form-signed-out-heading
       请您登陆
     = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-      = devise_error_messages!
+      -#= devise_error_messages!
       = f.label 'Email Address', :class => 'sr-only'
       = f.email_field :email, :class => 'form-control', :placeholder => '邮箱'
       = f.label 'Password', :class => 'sr-only'
