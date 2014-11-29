@@ -1,19 +1,19 @@
 .signed-out
   .form-signed-out
     %h2.form-signed-out-heading
-      Please sign in
+      请您登陆
     = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       = devise_error_messages!
       = f.label 'Email Address', :class => 'sr-only'
-      = f.email_field :email, :class => 'form-control', :placeholder => 'Email Address'
+      = f.email_field :email, :class => 'form-control', :placeholder => '邮箱'
       = f.label 'Password', :class => 'sr-only'
-      = f.password_field :password,  :class => 'form-control', :placeholder => 'Password'
-      .checkbox
-        %label
-          %input{:type => 'checkbox'}
-          Remember Me
+      = f.password_field :password,  :class => 'form-control', :placeholder => '密码'
+      -#.checkbox
+      -#  %label
+      -#    %input{:type => 'checkbox'}
+      -#    Remember Me
       %button{:type => "submit", :value => "Login", :class => 'btn btn-lg btn-primary btn-block'}
-        Sign in
+        登陆
       %p.notification
-        Forgot your password? #{link_to "Reset it", new_password_path(resource_name)}.
-        New to Kid meeting? #{link_to "Sign up now", new_registration_path(resource_name)}.
+        忘记密码? #{link_to "重置密码", new_password_path(resource_name)}.
+        首次访问? #{link_to "现在注册", new_registration_path(resource_name)}.

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20141118153730) do
 
   create_table "agents", force: true do |t|
-    t.string   "name",                   default: "", null: false
+    t.string   "username",               default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -75,9 +75,8 @@ ActiveRecord::Schema.define(version: 20141118153730) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "contact_phone"
-    t.string   "duration"
     t.string   "address"
-    t.boolean  "is_published"
+    t.boolean  "is_published",   default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
