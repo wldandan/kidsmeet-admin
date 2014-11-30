@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20141118153730) do
   create_table "agents", force: true do |t|
     t.string   "username",               default: "", null: false
     t.string   "email",                  default: "", null: false
+    t.string   "wechat",                 default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -81,6 +82,9 @@ ActiveRecord::Schema.define(version: 20141118153730) do
     t.datetime "updated_at"
   end
 
+  add_index "events", ["contact_phone"], name: "index_events_on_contact_phone", using: :btree
+  add_index "events", ["title"], name: "index_events_on_title", using: :btree
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -94,5 +98,8 @@ ActiveRecord::Schema.define(version: 20141118153730) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end

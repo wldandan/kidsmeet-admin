@@ -14,5 +14,8 @@ class CreateEvents < ActiveRecord::Migration
       t.boolean :is_published, :default => true
       t.timestamps
     end
+
+    add_index :events, :title
+    add_index :events, :contact_phone
   end
 end
