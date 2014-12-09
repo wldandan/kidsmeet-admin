@@ -19,12 +19,15 @@ class Ability
 
       can :read, Agent, id: user.id if user
       can :update, Agent, id: user.id if user
-      #can :create, Agent, id: user.id if user
+
+      can :read, Ckeditor::Picture, agent_id: user.id if user
+      can :update, Ckeditor::Picture, agent_id: user.id if user
+      can :create, Ckeditor::Picture, agent_id: user.id if user
 
       can :access, :rails_admin
       can :dashboard
 
-      can :manage, Ckeditor::Picture
+      #can :manage, Ckeditor::Picture
       #can :manage, Event
       #can :manage, :all
     end

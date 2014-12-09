@@ -1,4 +1,7 @@
 class Ckeditor::Picture < Ckeditor::Asset
+
+  belongs_to :agent
+
   has_attached_file :data,
                             :processors => [:watermark],
                             :url  => "#{CONFIG['image_host']}/ckeditor_assets/pictures/:id/:style_:basename.:extension",
