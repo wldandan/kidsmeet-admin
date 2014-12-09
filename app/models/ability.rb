@@ -25,7 +25,7 @@ class Ability
       can :dashboard
 
       can :manage, Ckeditor::Picture
-      can :manage, Event
+      #can :manage, Event
       #can :manage, :all
     end
 
