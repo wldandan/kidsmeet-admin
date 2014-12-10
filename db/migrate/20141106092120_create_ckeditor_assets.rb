@@ -2,6 +2,7 @@ class CreateCkeditorAssets < ActiveRecord::Migration
   def self.up
     create_table :ckeditor_assets do |t|
       t.integer :agent_id
+      t.integer :event_id
       t.string  :data_file_name, :null => false
       t.string  :data_content_type
       t.integer :data_file_size

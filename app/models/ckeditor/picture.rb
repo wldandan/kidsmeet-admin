@@ -1,6 +1,7 @@
 class Ckeditor::Picture < Ckeditor::Asset
 
   belongs_to :agent
+  belongs_to :event
 
   has_attached_file :data,
                             :processors => [:watermark],
@@ -23,8 +24,9 @@ class Ckeditor::Picture < Ckeditor::Asset
                             }
   validates_attachment_size :data, :less_than => 2.megabytes
   validates_attachment_presence :data
-  has_attached_file :image
-  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  validates_attachment_content_type :data, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
 
   def image_content_type
   end

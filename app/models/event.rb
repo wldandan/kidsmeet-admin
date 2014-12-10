@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
-  has_many :attendances
+
   belongs_to :agent
+  has_many :assets, :class_name=> "Ckeditor::Picture", :autosave => true
+  accepts_nested_attributes_for :assets, :allow_destroy => true
 
   validates :agent, presence: true
   validates :title, presence: true

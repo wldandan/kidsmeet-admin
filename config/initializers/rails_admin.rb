@@ -40,6 +40,8 @@ RailsAdmin.config do |config|
       field :contact_phone
       field :address
       field :main_image_url
+      #field :attendances
+      field :assets
       field :start_time
       field :end_time
       field :is_published
@@ -52,6 +54,8 @@ RailsAdmin.config do |config|
       field :abstract
       field :address
       field :main_image_url
+      #field :attendances
+      field :assets
       field :start_time
       field :end_time
       field :is_published
@@ -65,6 +69,8 @@ RailsAdmin.config do |config|
       field :abstract
       field :address
       field :main_image_url
+      #field :attendances
+      field :assets
       field :start_time
       field :end_time
       field :is_published
