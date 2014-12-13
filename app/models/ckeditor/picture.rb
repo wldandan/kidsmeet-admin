@@ -31,4 +31,10 @@ class Ckeditor::Picture < Ckeditor::Asset
   def title
     data_file_name
   end
+
+  def agent_id
+    return assetable_id unless assetable_id.blank?
+    return agent.id unless agent.nil? && agent.blank?
+    return event.agent.id unless event.nil? && event.agent.nil? && event.agent.blank?
+  end
 end
