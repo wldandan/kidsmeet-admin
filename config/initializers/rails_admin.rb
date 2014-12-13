@@ -36,15 +36,10 @@ RailsAdmin.config do |config|
       field :id
       field :title
       field :category
-      field :abstract
       field :contact_phone
       field :address
-      field :main_image_url
-      #field :attendances
-      field :assets
-      field :start_time
-      field :end_time
       field :is_published
+      #field :attendances
     end
 
     create do
@@ -55,7 +50,9 @@ RailsAdmin.config do |config|
       field :address
       field :main_image_url
       #field :attendances
-      field :assets
+      field :assets do
+        active true
+      end
       field :start_time
       field :end_time
       field :is_published
@@ -70,7 +67,9 @@ RailsAdmin.config do |config|
       field :address
       field :main_image_url
       #field :attendances
-      field :assets
+      field :assets do
+        active true
+      end
       field :start_time
       field :end_time
       field :is_published
@@ -96,29 +95,29 @@ RailsAdmin.config do |config|
       field :id
       field :title
       field :data
-      field :width
-      field :height
+      #field :width
+      #field :height
     end
 
     show do
       field :id
       field :title
       field :data
-      field :width
-      field :height
+      #field :width
+      #field :height
     end
 
 
     create do
       field :data
-      field :width
-      field :height
+      #field :width
+      #field :height
     end
 
     edit do
       field :data
-      field :width
-      field :height
+      #field :width
+      #field :height
     end
 
   end

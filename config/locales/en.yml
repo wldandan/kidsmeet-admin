@@ -21,25 +21,4 @@
 
 en:
   hello: "Hello world"
-#  activerecord:
-#      models:
-#        event:
-#          one: 亲子活动
-#          other: 亲子活动
-#        ckeditor/picture:
-#          one: 图片
-#          other: 图片
-#      attributes:
-#        event:
-#          id: 编号
-#          title: 标题
-#          category: 活动类型
-#          abstract: 活动简介
-#          content: 详细信息
-#          main_image_url: 主图链接
-#          contact_phone: 联系电话
-#          address: 活动地址
-#          is_published: 是否发布
-#          start_time: 开始时间
-#          end_time: 结束时间
 

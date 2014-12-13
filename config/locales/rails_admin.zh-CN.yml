@@ -125,7 +125,7 @@ zh-CN:
       are_you_sure_you_want_to_delete_the_object: "确定删除该%{model_name}?"
       confirmation: "确定?"
       bulk_delete: "选中的信息将被一起删除？"
-      new_model: "%{name} (new)"
+      new_model: "%{name}"
     export:
       confirmation: "Export to %{name}"
       select: "Select fields to export"

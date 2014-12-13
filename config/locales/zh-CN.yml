@@ -57,6 +57,7 @@ zh-CN:
         abstract: 活动简介
         content: 详细信息
         main_image_url: 主图链接
+        assets: 图片
         contact_phone: 联系电话
         address: 活动地址
         is_published: 是否发布
