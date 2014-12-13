@@ -38,6 +38,14 @@ class Event < ActiveRecord::Base
     main_image_url.gsub('medium','wechat')
   end
 
+  def main_image
+    assets.first
+  end
+
+  def main_image_thumb_url
+    "#{CONFIG['image_server']}/#{main_image.id}/thumb_#{main_image.data_file_name}"
+  end
+
 
   def users
     #User.in(id: attendances.map(&:user_id))

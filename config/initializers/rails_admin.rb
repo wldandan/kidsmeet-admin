@@ -33,10 +33,21 @@ RailsAdmin.config do |config|
     label '亲子活动'
 
     list do
-      field :id
+      field :main_image_thumb_url do
+        column_width 100
+        formatted_value do
+          bindings[:view].tag(:img, { :src => (bindings[:object].main_image_thumb_url) })
+        end
+      end
+
+      field :id do
+        column_width 50
+      end
       field :title
       field :category
-      field :contact_phone
+      field :contact_phone do
+        column_width 100
+      end
       field :address
       field :is_published
       #field :attendances
@@ -75,6 +86,32 @@ RailsAdmin.config do |config|
       field :is_published
 
       field :content, :ck_editor
+    end
+
+    show do
+      field :title
+      field :category
+      field :contact_phone
+      field :abstract
+      field :address
+      field :main_image_url
+      field :main_image_thumb_url do
+        column_width 100
+        formatted_value do
+          bindings[:view].tag(:img, { :src => (bindings[:object].main_image_thumb_url) })
+        end
+      end
+
+      field :assets do
+        active true
+      end
+      field :start_time
+      field :end_time
+      field :content do
+        formatted_value do
+          (bindings[:view].tag(:div) << value.html_safe)
+        end
+      end
     end
 
   end
@@ -103,21 +140,15 @@ RailsAdmin.config do |config|
       field :id
       field :title
       field :data
-      #field :width
-      #field :height
     end
 
 
     create do
       field :data
-      #field :width
-      #field :height
     end
 
     edit do
       field :data
-      #field :width
-      #field :height
     end
 
   end

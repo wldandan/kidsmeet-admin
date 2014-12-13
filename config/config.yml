@@ -5,11 +5,13 @@ defaults: &defaults
 development:
    <<: *defaults
    image_host: http://localhost:9292
+   image_server: http://kidmeets-images.qiniudn.com
 
 production:
    <<: *defaults
    image_host: http://admin.kidmeets.cn
    qiniu_bucket: kidmeets-images
+   image_server: http://kidmeets-images.qiniudn.com
 
 test:
    <<: *defaults

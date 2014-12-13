@@ -28,13 +28,6 @@ class Ckeditor::Picture < Ckeditor::Asset
   validates_attachment_content_type :data, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 
-  def image_content_type
-  end
-
-  def url_content
-    url(:content)
-  end
-
   def title
     data_file_name
   end
