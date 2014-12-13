@@ -13,6 +13,7 @@ class Event < ActiveRecord::Base
   validates :start_time, presence: true
   validates :end_time, presence: true
 
+  validates :assets, presence: true
 
   def adults_number
     attendances.inject(0) { |result, item|
@@ -43,9 +44,10 @@ class Event < ActiveRecord::Base
   end
 
   def main_image_thumb_url
-    "#{CONFIG['image_server']}/#{main_image.id}/thumb_#{main_image.data_file_name}"
+    unless main_image.blank?
+      "#{CONFIG['image_server']}/#{main_image.id}/thumb_#{main_image.data_file_name}"
+    end
   end
-
 
   def users
     #User.in(id: attendances.map(&:user_id))
@@ -54,6 +56,5 @@ class Event < ActiveRecord::Base
   def duration
     end_time - start_time
   end
-
 
 end
