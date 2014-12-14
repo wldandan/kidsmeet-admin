@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20141118153730) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.integer  "agent_id"
+    t.integer  "event_id"
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
     t.integer  "data_file_size"

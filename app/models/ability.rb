@@ -3,15 +3,16 @@ class Ability
 
   def initialize(user)
 
-    if user.has_role?('admin')
+    if user.has_role?('superadmin')
       can :access, :rails_admin
       can :dashboard
-
-      if user.has_role?('superadmin')
-        can :manage, :all
-      else
-        can :read, :all
-      end
+      can :manage, :all
+      can :read, :all
+      #if user.has_role?('superadmin')
+      #  can :manage, :all
+      #else
+      #  can :read, :all
+      #end
     else
       can :read, Event, agent_id: user.id if user
       can :update, Event, agent_id: user.id if user
@@ -23,6 +24,7 @@ class Ability
       can :read, Ckeditor::Picture, ["agent_id = ? OR assetable_id = ?", user.id, user.id] do |picture|
         picture.agent_id = user.id || picture.assetable_id == user.id
       end
+
       can :update, Ckeditor::Picture, agent_id: user.id if user
       can :create, Ckeditor::Picture, agent_id: user.id if user
 

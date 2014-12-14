@@ -9,7 +9,7 @@ class Agent < ActiveRecord::Base
   has_many :pictures,:class_name=> "Ckeditor::Picture"
 
   def has_role?(name)
-    self.roles.where(name: name) .length> 0
+    self.roles.where(name: name).length> 0
   end
 
 end
