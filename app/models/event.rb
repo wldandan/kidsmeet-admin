@@ -1,8 +1,36 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id             :integer          not null, primary key
+#  agent_id       :integer
+#  title          :string(255)
+#  category       :string(255)
+#  abstract       :string(255)
+#  content        :text
+#  main_image_url :string(255)
+#  start_time     :datetime
+#  end_time       :datetime
+#  contact_phone  :string(255)
+#  address        :string(255)
+#  is_published   :boolean          default(TRUE)
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+# Indexes
+#
+#  index_events_on_contact_phone  (contact_phone)
+#  index_events_on_title          (title)
+#
+
 class Event < ActiveRecord::Base
 
   belongs_to :agent
   has_many :assets, :class_name=> "Ckeditor::Picture", :autosave => true
   accepts_nested_attributes_for :assets, :allow_destroy => true
+
+  has_many :attendances
+  accepts_nested_attributes_for :attendances, :allow_destroy => true
 
   validates :agent, presence: true
   validates :title, presence: true
