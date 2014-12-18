@@ -28,6 +28,8 @@ class Ability
       can :update, Ckeditor::Picture, agent_id: user.id if user
       can :create, Ckeditor::Picture, agent_id: user.id if user
 
+      can :manage, Attendance
+
       can :access, :rails_admin
       can :dashboard
 

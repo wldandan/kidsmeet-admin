@@ -43,6 +43,9 @@ zh-CN:
       time_format: "%Y年%m月%d日 %H:%M:%S"
   activerecord:
     models:
+      attendance:
+        one: 参与者
+        other: 参与者
       event:
         one: 亲子活动
         other: 亲子活动
@@ -56,6 +59,7 @@ zh-CN:
         category: 活动类型
         abstract: 活动简介
         content: 详细信息
+        attendances: 活动参与者
         main_image_url: 主图链接
         main_image_thumb_url: 图片
         assets: 宣传图片
@@ -64,12 +68,24 @@ zh-CN:
         is_published: 是否发布
         start_time: 开始时间
         end_time: 结束时间
+      event/attendances:
+        event: 活动名称
+        username: 用户名
+        phone_number: 电话
+        children_number: 小孩数量
+        adults_number: 成人数量
       ckeditor/picture:
         id: 编号
         title: 标题
         data: 图片
         width: 宽度
         height: 高度
+      attendance:
+        event: 活动名称
+        username: 用户名
+        phone_number: 电话
+        children_number: 小孩数量
+        adults_number: 成人数量
   date:
     abbr_day_names:
     - 日

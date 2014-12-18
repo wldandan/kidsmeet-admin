@@ -15,6 +15,15 @@
 #
 
 class Attendance < ActiveRecord::Base
-  belongs_to :event
+  belongs_to :event, :inverse_of => :attendances
   belongs_to :user
+
+  validates :username, presence: true
+  validates :phone_number, presence: true
+  validates :adults_number, presence: true
+  validates :children_number, presence: true
+
+  def title
+    "#{username}-#{phone_number}"
+  end
 end

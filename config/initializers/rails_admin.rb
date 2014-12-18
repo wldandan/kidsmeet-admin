@@ -48,9 +48,14 @@ RailsAdmin.config do |config|
       field :contact_phone do
         column_width 100
       end
-      field :address
+      field :attendances, :string do
+        column_width 100
+        formatted_value do
+          bindings[:object].attendances.count
+        end
+      end
       field :is_published
-      #field :attendances
+      #field :address
     end
 
     create do
@@ -60,7 +65,9 @@ RailsAdmin.config do |config|
       field :abstract
       field :address
       field :main_image_url
-      #field :attendances
+      field :attendances do
+        active true
+      end
       field :assets do
         active true
       end
@@ -77,7 +84,10 @@ RailsAdmin.config do |config|
       field :abstract
       field :address
       field :main_image_url
-      #field :attendances
+      field :attendances do
+        active true
+        inverse_of :event
+      end
       field :assets do
         active true
       end
@@ -116,6 +126,46 @@ RailsAdmin.config do |config|
 
   end
 
+  config.model 'Attendance' do
+    navigation_label '资源管理'
+    label_plural '参与者'
+    label '参与者'
+
+    list do
+      field :event
+      field :username
+      field :phone_number
+      field :children_number
+      field :adults_number
+    end
+
+    show do
+      field :event
+      field :username
+      field :phone_number
+      field :children_number
+      field :adults_number
+    end
+
+    edit do
+      field :event
+      field :username
+      field :phone_number
+      field :children_number
+      field :adults_number
+    end
+
+    create do
+      field :event
+      field :username
+      field :phone_number
+      field :children_number
+      field :adults_number
+    end
+
+  end
+
+
   config.model 'Agent' do
     visible do
       # controller bindings is available here. Example:
@@ -132,8 +182,6 @@ RailsAdmin.config do |config|
       field :id
       field :title
       field :data
-      #field :width
-      #field :height
     end
 
     show do
