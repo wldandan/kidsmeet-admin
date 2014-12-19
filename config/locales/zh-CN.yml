@@ -286,6 +286,8 @@ zh-CN:
     formats:
       default: ! '%Y-%m-%d'
       long: ! '%Y-%m-%d %H:%M'
+      date_format: "%Y-%m-%d"
+      time_format: "'%Y-%m-%d %H:%M:%S"
 #      short: ! '%m月%d日 %H:%M'
 #    pm: 下午
 

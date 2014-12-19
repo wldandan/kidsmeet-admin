@@ -16,14 +16,6 @@ RailsAdmin.config do |config|
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
-  ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
-
-  #config.authorize_with do
-  #  authenticate_or_request_with_http_basic('Site Message') do |username, password|
-  #    username == 'admin' && password == 'admin'
-  #  end
-  #end
-
   #config.audit_with :history, User
 
   config.model Event do
@@ -44,18 +36,24 @@ RailsAdmin.config do |config|
         column_width 50
       end
       field :title
-      field :category
+      #field :category
       field :contact_phone do
         column_width 100
       end
       field :attendances, :string do
+        label "参与者人数"
         column_width 100
         formatted_value do
           bindings[:object].attendances.count
         end
       end
-      field :is_published
-      #field :address
+      #field :is_published
+      field :address do
+        label "参与者名单"
+        pretty_value do
+          bindings[:view].tag(:a, { :href => "/events/#{bindings[:object].id}.xls" }) << '下载'
+        end
+      end
     end
 
     create do
@@ -104,7 +102,6 @@ RailsAdmin.config do |config|
       field :contact_phone
       field :abstract
       field :address
-      field :main_image_url
       field :main_image_thumb_url do
         column_width 100
         formatted_value do
@@ -115,6 +112,11 @@ RailsAdmin.config do |config|
       field :assets do
         active true
       end
+
+      field :attendances do
+        active true
+      end
+
       field :start_time
       field :end_time
       field :content do

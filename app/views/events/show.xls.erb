@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel"
+          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">活动名称</Data></Cell>
+        <Cell><Data ss:Type="String">活动类型</Data></Cell>
+        <Cell><Data ss:Type="String">结束时间</Data></Cell>
+        <Cell><Data ss:Type="String">参与者姓名</Data></Cell>
+        <Cell><Data ss:Type="String">联系电话</Data></Cell>
+        <Cell><Data ss:Type="String">电子邮件</Data></Cell>
+        <Cell><Data ss:Type="String">成人数量</Data></Cell>
+        <Cell><Data ss:Type="String">小孩数量</Data></Cell>
+        <Cell><Data ss:Type="String">报名时间</Data></Cell>
+      </Row>
+      <% @event.attendances.each do |attendance| %>
+          <Row>
+            <Cell><Data ss:Type="String"><%= @event.title %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= @event.category %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= l @event.end_time, :format => :time_format%></Data></Cell>
+            <Cell><Data ss:Type="String"><%= attendance.username %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= attendance.phone_number %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= attendance.email %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= attendance.adults_number %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= attendance.children_number %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= l attendance.created_at, :format => :time_format%></Data></Cell>
+          </Row>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

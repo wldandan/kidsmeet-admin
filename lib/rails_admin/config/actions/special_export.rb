@@ -1,0 +1,2 @@
+class SpecialExport
+end
