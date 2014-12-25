@@ -21,14 +21,11 @@ class Ability
       can :read, Agent, id: user.id if user
       can :update, Agent, id: user.id if user
 
-      can :read, Ckeditor::Picture, ["agent_id = ? OR assetable_id = ?", user.id, user.id] do |picture|
+      can :manage, Ckeditor::Picture, ["agent_id = ? OR assetable_id = ?", user.id, user.id] do |picture|
         picture.agent_id = user.id || picture.assetable_id == user.id
       end
 
-      can :update, Ckeditor::Picture, agent_id: user.id if user
-      can :create, Ckeditor::Picture, agent_id: user.id if user
-
-      can :manage, Attendance
+      can :manage, Attendance, :event => {:id => user.event_ids}
 
       can :access, :rails_admin
       can :dashboard
