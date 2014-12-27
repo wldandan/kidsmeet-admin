@@ -57,16 +57,20 @@ RailsAdmin.config do |config|
     end
 
     create do
+      field :assets do
+        active true
+      end
+
       field :title
       field :category
       field :contact_phone
       field :abstract
       field :address
       field :attendances do
-        active true
+        #active true
       end
       field :assets do
-        active true
+        #active true
       end
       field :start_time
       field :end_time
@@ -75,17 +79,18 @@ RailsAdmin.config do |config|
     end
 
     edit do
+      field :assets do
+        #active true
+      end
+
       field :title
       field :category
       field :contact_phone
       field :abstract
       field :address
       field :attendances do
-        active true
+        #active true
         inverse_of :event
-      end
-      field :assets do
-        active true
       end
       field :start_time
       field :end_time
@@ -105,10 +110,6 @@ RailsAdmin.config do |config|
         formatted_value do
           bindings[:view].tag(:img, { :src => (bindings[:object].brand_thumb_url) })
         end
-      end
-
-      field :assets do
-        active true
       end
 
       field :attendances do
