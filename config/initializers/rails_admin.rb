@@ -25,10 +25,10 @@ RailsAdmin.config do |config|
     label '亲子活动'
 
     list do
-      field :main_image_thumb_url do
+      field :brand_thumb_url do
         column_width 100
         formatted_value do
-          bindings[:view].tag(:img, { :src => (bindings[:object].main_image_thumb_url) })
+          bindings[:view].tag(:img, { :src => (bindings[:object].brand_thumb_url) })
         end
       end
 
@@ -62,7 +62,6 @@ RailsAdmin.config do |config|
       field :contact_phone
       field :abstract
       field :address
-      field :main_image_url
       field :attendances do
         active true
       end
@@ -81,7 +80,6 @@ RailsAdmin.config do |config|
       field :contact_phone
       field :abstract
       field :address
-      field :main_image_url
       field :attendances do
         active true
         inverse_of :event
@@ -102,10 +100,10 @@ RailsAdmin.config do |config|
       field :contact_phone
       field :abstract
       field :address
-      field :main_image_thumb_url do
+      field :brand_thumb_url do
         column_width 100
         formatted_value do
-          bindings[:view].tag(:img, { :src => (bindings[:object].main_image_thumb_url) })
+          bindings[:view].tag(:img, { :src => (bindings[:object].brand_thumb_url) })
         end
       end
 

@@ -60,8 +60,9 @@ zh-CN:
         abstract: 活动简介
         content: 详细信息
         attendances: 活动参与者
-        main_image_url: 主图链接
-        main_image_thumb_url: 图片
+        #main_image_url: 主图链接
+        #main_image_thumb_url: 图片
+        brand_thumb_url: 图片
         assets: 宣传图片
         contact_phone: 联系电话
         address: 活动地址

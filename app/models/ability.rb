@@ -17,6 +17,7 @@ class Ability
       can :read, Event, agent_id: user.id if user
       can :update, Event, agent_id: user.id if user
       can :create, Event, agent_id: user.id if user
+      can :destroy, Event, agent_id: user.id if user
 
       can :read, Agent, id: user.id if user
       can :update, Agent, id: user.id if user

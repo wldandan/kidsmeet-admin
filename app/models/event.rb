@@ -60,11 +60,11 @@ class Event < ActiveRecord::Base
   end
 
   def detail_image_url
-    main_image_url.gsub('medium','large')
+    "#{CONFIG['image_server']}/#{main_image.id}/large_#{main_image.data_file_name}"
   end
 
   def mail_image_url
-    main_image_url.gsub('medium','wechat')
+    "#{CONFIG['image_server']}/#{main_image.id}/original_#{main_image.data_file_name}"
   end
 
   def main_image
@@ -72,9 +72,11 @@ class Event < ActiveRecord::Base
   end
 
   def main_image_thumb_url
-    unless main_image.blank?
-      "#{CONFIG['image_server']}/#{main_image.id}/thumb_#{main_image.data_file_name}"
-    end
+    "#{CONFIG['image_server']}/#{main_image.id}/thumb_#{main_image.data_file_name}"
+  end
+
+  def brand_thumb_url
+    "#{CONFIG['image_server']}/#{main_image.id}/thumb_#{main_image.data_file_name}"
   end
 
   def users
