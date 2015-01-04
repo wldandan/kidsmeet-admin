@@ -75,6 +75,7 @@ RailsAdmin.config do |config|
       field :start_time
       field :end_time
       field :is_published
+      field :valuable_items
       field :content, :ck_editor
     end
 
@@ -95,7 +96,7 @@ RailsAdmin.config do |config|
       field :start_time
       field :end_time
       field :is_published
-
+      field :valuable_items
       field :content, :ck_editor
     end
 
@@ -118,6 +119,7 @@ RailsAdmin.config do |config|
 
       field :start_time
       field :end_time
+      field :valuable_items
       field :content do
         formatted_value do
           (bindings[:view].tag(:div) << value.html_safe)

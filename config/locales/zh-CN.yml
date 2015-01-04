@@ -59,6 +59,7 @@ zh-CN:
         category: 活动类型
         abstract: 活动简介
         content: 详细信息
+        valuable_items: 体验包含
         attendances: 活动参与者
         #main_image_url: 主图链接
         #main_image_thumb_url: 图片

@@ -8,6 +8,7 @@
 #  category       :string(255)
 #  abstract       :string(255)
 #  content        :text
+#  valuable_items :text
 #  main_image_url :string(255)
 #  start_time     :datetime
 #  end_time       :datetime
@@ -37,7 +38,7 @@ class Event < ActiveRecord::Base
   validates :category, presence: true
   validates :abstract, presence: true
   validates :content, presence: true
-  validates :main_image_url, presence: true
+  validates :valuable_items, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true
 

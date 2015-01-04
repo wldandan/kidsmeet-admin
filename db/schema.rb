@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118153730) do
+ActiveRecord::Schema.define(version: 20150104161616) do
 
   create_table "agents", force: true do |t|
     t.string   "username",               default: "", null: false
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20141118153730) do
     t.string   "category"
     t.string   "abstract"
     t.text     "content"
+    t.text     "valuable_items"
     t.string   "main_image_url"
     t.datetime "start_time"
     t.datetime "end_time"
