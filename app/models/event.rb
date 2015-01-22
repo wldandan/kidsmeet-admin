@@ -30,7 +30,7 @@ class Event < ActiveRecord::Base
   has_many :assets, :class_name=> "Ckeditor::Picture", :autosave => true
   accepts_nested_attributes_for :assets, :allow_destroy => true
 
-  has_many :attendances, :dependent => :destroy, :inverse_of => :event
+  has_many :attendances, :inverse_of => :event
   accepts_nested_attributes_for :attendances, :allow_destroy => true
 
   validates :agent, presence: true
@@ -41,7 +41,6 @@ class Event < ActiveRecord::Base
   validates :valuable_items, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true
-
   validates :assets, presence: true
 
   def adults_number
@@ -65,7 +64,7 @@ class Event < ActiveRecord::Base
   end
 
   def mail_image_url
-    "#{CONFIG['image_server']}/#{main_image.id}/original_#{main_image.data_file_name}"
+  n  "#{CONFIG['image_server']}/#{main_image.id}/original_#{main_image.data_file_name}"
   end
 
   def main_image
@@ -79,13 +78,4 @@ class Event < ActiveRecord::Base
   def brand_thumb_url
     "#{CONFIG['image_server']}/#{main_image.id}/thumb_#{main_image.data_file_name}"
   end
-
-  def users
-    #User.in(id: attendances.map(&:user_id))
-  end
-
-  def duration
-    end_time - start_time
-  end
-
 end

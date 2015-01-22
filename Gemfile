@@ -9,9 +9,12 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
+gem 'bootstrap-sass'
+gem 'bootstrap-sass-extras'
+gem 'bootstrap-datepicker-rails'
+gem 'slim-rails'
 gem 'haml-rails'
+gem 'simple_form'
 
 # application
 gem 'rails_admin'
@@ -32,6 +35,18 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+  gem 'simplecov'
+  gem 'rspec-rails'
+  gem 'rspec-its'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+end
+
+group :test do
+  gem 'database_rewinder'
+  gem 'turnip'
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'poltergeist'
+  gem 'uuidtools'
 end
