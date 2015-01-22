@@ -24,7 +24,7 @@
 #  index_events_on_title          (title)
 #
 
-FactoryGirl.define do |event|
+FactoryGirl.define do
   factory :event do
     title            { '小小橡皮泥——人气爆棚再加场' }
     category         { '亲子活动' }
@@ -33,5 +33,9 @@ FactoryGirl.define do |event|
     valuable_items   { '丰富学生的课余生活\r\n培养学生的动手能力和创造能力'}
     start_time       { Time.now }
     end_time         { Time.now + 100 }
+
+    after(:build) { |event|
+      event.assets << FactoryGirl.build(:picture, :event => event)
+    }
   end
 end
