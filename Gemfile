@@ -48,5 +48,4 @@ group :test do
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'poltergeist'
-  gem 'uuidtools'
 end
