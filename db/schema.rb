@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20150104161616) do
     t.integer  "agent_id"
     t.string   "title"
     t.string   "category"
-    t.string   "abstract"
+    t.text     "abstract"
     t.text     "content"
     t.text     "valuable_items"
     t.string   "main_image_url"

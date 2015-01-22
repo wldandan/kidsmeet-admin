@@ -6,7 +6,7 @@
 #  agent_id       :integer
 #  title          :string(255)
 #  category       :string(255)
-#  abstract       :string(255)
+#  abstract       :text
 #  content        :text
 #  valuable_items :text
 #  main_image_url :string(255)
