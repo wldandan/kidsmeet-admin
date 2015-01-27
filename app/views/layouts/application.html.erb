@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>咖萌-聚焦亲子活动的社交平台</title>
+  <title>咖萌亲子游-聚焦亲子活动的社交平台</title>
   <%= favicon_link_tag 'favicon.ico' %>
-  <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application'%>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
   <meta charset="utf-8">
@@ -22,16 +22,22 @@
 
 </head>
 
-<body>
-<%= render("shared/navigator") %>
+<body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
+    <%= render("shared/navigator") %>
+    <%= render("shared/header") %>
 
-<!-- Page Content -->
-<div class="container">
-  <%=yield%>
-</div>
-<%= render("shared/about") %>
-<%= render("shared/footer") %>
-<!-- /.container -->
-<%= debug(params) if Rails.env.development? %>
+    <%= yield :before_content %>
+    <div class="default-content">
+      <%= bootstrap_flash if flash.any? %>
+
+        <div class="container" id="main-content">
+          <%= yield %>
+        </div>
+
+    </div>
+    <%= render("shared/about") %>
+    <%= render("shared/footer") %>
+    <!-- /.container -->
+    <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

@@ -39,8 +39,12 @@ zh-CN:
 
   time:
     formats:
-      date_format: "%Y年%m月%d日"
-      time_format: "%Y年%m月%d日 %H:%M:%S"
+      default: ! '%Y-%m-%d'
+      long: ! '%Y-%m-%d'
+      date_format: "%Y年%m月%d日 (%A)"
+      time_format: "%H:%M:%S"
+    am: "上午"
+    pm: "下午"
   activerecord:
     models:
       attendance:
@@ -283,14 +287,14 @@ zh-CN:
       last_word_connector: ! ', 和 '
       two_words_connector: ! ' 和 '
       words_connector: ! ', '
-  time:
-    am: 上午
-    formats:
-      default: ! '%Y-%m-%d'
-      long: ! '%Y-%m-%d %H:%M'
-      date_format: "%Y-%m-%d"
-      time_format: "'%Y-%m-%d %H:%M:%S"
-#      short: ! '%m月%d日 %H:%M'
-#    pm: 下午
+#  time:
+#    am: 上午
+#    formats:
+#      default: ! '%Y-%m-%d'
+#      long: ! '%Y-%m-%d %H:%M'
+#      date_format: "%Y-%m-%d"
+#      time_format: "'%Y-%m-%d %H:%M:%S"
+##      short: ! '%m月%d日 %H:%M'
+##    pm: 下午
 
 

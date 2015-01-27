@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
 
   devise_for :agents, :controllers => {
@@ -5,12 +6,30 @@ Rails.application.routes.draw do
       :sessions => :sessions,
       :passwords => :passwords
   }
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
+  mount Sidekiq::Web => '/sidekiq'
 
-  root :to => redirect('/admin')
+  resources :attendances
+  resources :users
 
-  resources :events
+  resources :events do
+    collection do
+      get :upcomings
+      get :histories
+    end
+  end
+
+  #root :to => redirect('/admin')
+  root 'events#upcommings'
+
+  get 'upcomings', to: 'events#upcomings'
+  get 'history', to: 'events#history'
+  post 'attendances /join', to: 'attendances#join'
+
+  get 'agents/:wechat/histories' => 'agents#histories'
+  get 'agents/:wechat/upcomings' => 'agents#upcomings'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

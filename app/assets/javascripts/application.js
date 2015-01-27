@@ -12,4 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.jcarousel.min
+//= require jquery.jscroll.min
+//= require bootstrap.min
+//= require comments
+//= require share-sns-config
+//= require google-analytics
+//= require header
+//= require re-arrange-event
+//= require image-carousel

@@ -1,0 +1,153 @@
+.jcarousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.jcarousel ul {
+  width: 20000em;
+  position: relative;
+
+  /* Optional, required in this case since it's a <ul> element */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jcarousel li {
+  /* Required only for block elements like <li>'s */
+  float: left;
+  img {
+    max-width: 848px;
+    max-height: 474px;
+    width: 100%;
+  }
+}
+
+.jcarousel[dir=rtl] li {
+  float: right;
+}
+
+a {
+  cursor: pointer;
+}
+
+.jcarousel-control-prev, .jcarousel-control-next {
+  font-size: 20px;
+  color: #fff;
+  bottom: auto;
+  opacity: .7;
+
+  position: absolute;
+  text-align: center;
+  text-shadow: none;
+  top: 50%;
+  margin-top: -40px;
+  width: 7%;
+  min-width: 40px;
+
+  background-image: none;
+  background-repeat: repeat-x;
+  background: white;
+
+  &:hover {
+    color: white;
+    opacity: .9;
+    outline: medium none;
+    text-decoration: none;
+  }
+}
+
+.jcarousel-control-prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.jcarousel-control-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.fa-angle-left {
+  font-size: 80px;
+  color: #ff6800;
+  margin: 0 7px 0 0;
+}
+
+.fa-angle-right {
+  font-size: 80px;
+  color: #ff6800;
+  margin: 0 0 0 7px;
+}
+
+.jcarousel-pagination {
+  bottom: -40px;
+  list-style: none outside none;
+  padding-left: 0;
+  position: absolute;
+  width: 90%;
+  z-index: 15;
+  text-align: center;
+
+  a {
+    background-color: #a1a1a1;
+    border: 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    margin: 3px;
+    text-indent: -999px;
+    width: 15px;
+    box-shadow: 1px 1px white;
+  }
+
+  .active {
+    background-color: #ff6800;
+    height: 15px;
+    margin: 3px;
+    width: 15px;
+  }
+}
+
+.main-carousel {
+  .jcarousel li img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .jcarousel-pagination {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: left;
+    padding-left: 50px;
+
+    a {
+      border-radius: 5px;
+      background: 0;
+      border: 1px solid #fff;
+      color: #fff;
+      text-indent: 0;
+      padding: 8px 14px;
+      margin: 2px;
+      width: auto;
+      height: auto;
+      transition: background-color .3s ease-in-out 0s;
+      box-shadow: none;
+
+      &:hover {
+        background: rgba(255,255,255,0.6);
+        color: #000;
+      }
+    }
+
+    .active {
+      background: rgba(255,255,255,0.6);
+      color: #000;
+    }
+  }
+}

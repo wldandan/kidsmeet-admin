@@ -1,0 +1,145 @@
+.row
+  legend =@event.title.html_safe
+
+.row.flex-sm-layout
+  .clearfix
+
+  .col-sm-8.activity-intro
+    .row
+      .col-md-12.col-sm-12.gallery
+        -if @event.id == 9
+          .activity-full
+        .jcarousel dir='rtl'
+          ul
+            - @event.assets.each do |picture|
+              li.jcarousel-item
+                = image_tag "#{picture.try(:data).try(:url, :medium)}", :class => "img-responsive"
+          a.jcarousel-control-prev
+            i.fa.fa-angle-left
+          a.jcarousel-control-next
+            i.fa.fa-angle-right
+        .jcarousel-pagination
+          - @event.assets.each do |picture|
+            a href="#"
+      .intro.col-md-12.col-sm-12.col-xs-12.flex-order-3
+        #share-iterm
+          == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{@event.title}", :pic => "#{@event.brand_image_url}", :text => "#{@event.abstract}", :id => "#{@event.id}"}}
+        .intro-content
+          h3 活动介绍
+        p
+        p
+          = @event.abstract.html_safe
+        p
+          = @event.content.html_safe
+
+  .col-sm-4.right-box
+    .row
+      col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
+        .panel.panel-primary
+          .panel-heading 活动详情
+          .panel-content
+            .row.more-info
+              ul.col-xs-12.col-sm-12.col-md-12
+                - if @event.category
+                  li.row
+                    .col-md-12.col-sm-12.col-xs-12
+                      span.label #{l @event.start_time, :format => :date_format}
+                  li.row
+                    .col-md-12.col-sm-12.col-xs-12
+                      span.label.time_item #{l @event.start_time, :format => :time_format} - #{l @event.end_time, :format => :time_format}
+                      .label.label-info.attendance_number_item
+                        i.fa.fa-male
+                        span.badge #{@event.adults_number}
+                        span.separator |
+                        i.fa.fa-child
+                        span.badge #{@event.children_number}
+
+                - if @event.address.present?
+                  li.row
+                    .col-md-12.col-sm-12.col-xs-12
+                      span.label.label-alert #{@event.address}
+
+                - if @event.contact_phone.present?
+                  li.row
+                    .col-md-12.col-sm-12.col-xs-12
+                      span.label.label-danger
+                        a#contact-phone href="tel:#{@event.contact_phone}" #{@event.contact_phone}
+
+
+            .row.valuable-items
+              h2 体验包括
+              .col-xs-12
+                ul
+                  - @event.valuable_items_array.each do |item|
+                    li = item.html_safe
+
+    - unless @event.is_expired?
+      .row#sign-up-from
+        col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
+          .panel.panel-primary
+            .panel-heading 我想体验
+            .panel-content
+              .sign-up-form
+                = form_for @attendance, :url => {:controller => "attendances", :action => "join"} do |f|
+                  input type="hidden" name="attendance[event_id]" id="event_id" value=@event.id
+
+                  .form-group
+                    label for="username" 姓名*
+                    input type="text" required="true" x-moz-errormessage="请输入您的真实姓名" class="form-control" id="username" placeholder="请输入您的真实姓名" name="attendance[username]"
+
+                  .form-group
+                    label for="phone_number" 手机号*
+                    input type="text" minlength="11" maxlength="11" required="true" placeholder="手机号将作为登陆账号" x-moz-errormessage="请输入合法的11位手机号(例如: 13512341234" name="attendance[phone_number]" pattern="^[0-9]+$" id="phone_number" class="form-control"
+
+                  .form-group
+                    label for="email" 电子邮箱*
+                    input type="email" placeholder="通知会发送邮件" required="true" maxlength="50" x-moz-errormessage="请输入合法的电子邮件地址(例如: example@example.com)" pattern="^([A-Za-z0-9_\-\.])+\@(?!(?:[A-Za-z0-9_\-\.]+\.)?([A-Za-z]{2,4})\.\2)([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$" class="form-control" id="email" name="attendance[email]"
+
+                  .form-group
+                    label for="adults_number" 成人数量
+                    select.form-control id="adults_number" name="attendance[adults_number]"
+                      option 1
+                      option 2
+                      option 3
+                      option 4
+                      option 5
+
+
+                  .form-group
+                    label for="children_number" 儿童数量
+                    select.form-control id="children_number" name="attendance[children_number]"
+                      option 1
+                      option 2
+                      option 3
+
+                  .form-group
+                    label
+                    button type="submit" class="btn btn-primary" 立刻报名
+
+    .row
+      col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
+        .panel.panel-primary
+          .panel-heading 游伴们
+          .panel-content
+            - @event.attendances.each do |attendance|
+
+              .row.user-row
+                .col-xs-2.user-row-avatar
+                  = image_tag avatar_placeholder_url, height: '50px', width: '50px'
+                .col-xs-10.user-row-info
+                  strong #{attendance.username}
+                  br
+                    span.text-muted #{attendance.adults_number}名成人，#{attendance.children_number}名儿童参加
+                hr
+
+  .intro.col-md-12.col-sm-12.col-xs-12.flex-order-4
+    .intro-content
+      h3 网友怎么说
+    .ds-thread data-thread-key="#{@event.id}" data-title="#{@event.title}" data-url="#{@event.address}"
+
+.scroll-top
+  a href='#main-content'
+    i.fa.fa-chevron-circle-up
+.sign-up-tab
+  a href='#sign-up-from' 立刻报名
+

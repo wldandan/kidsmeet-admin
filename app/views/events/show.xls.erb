@@ -13,8 +13,6 @@
         <Cell><Data ss:Type="String">参与者姓名</Data></Cell>
         <Cell><Data ss:Type="String">联系电话</Data></Cell>
         <Cell><Data ss:Type="String">电子邮件</Data></Cell>
-        <Cell><Data ss:Type="String">成人数量</Data></Cell>
-        <Cell><Data ss:Type="String">小孩数量</Data></Cell>
         <Cell><Data ss:Type="String">报名时间</Data></Cell>
       </Row>
       <% @event.attendances.each do |attendance| %>
@@ -25,8 +23,6 @@
             <Cell><Data ss:Type="String"><%= attendance.username %></Data></Cell>
             <Cell><Data ss:Type="String"><%= attendance.phone_number %></Data></Cell>
             <Cell><Data ss:Type="String"><%= attendance.email %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= attendance.adults_number %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= attendance.children_number %></Data></Cell>
             <Cell><Data ss:Type="String"><%= l attendance.created_at, :format => :time_format%></Data></Cell>
           </Row>
       <% end %>

@@ -1,5 +1,8 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default" role="navigation">
+  <div class="main-logo"><a class="navbar-brand" href="/">咖萌亲子</a></div>
+  <div class="menu-container">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-menu">
         <span class="sr-only">Toggle navigation</span>
@@ -7,8 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><%= image_tag 'logo.png' %></a>
-      <a class="navbar-brand" href="/">咖萌亲子游</a>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,9 +21,6 @@
         </li>
         <li class= <%= 'active' if "#{@menu_item}".eql?"upcomings" %>><a href="/upcomings">热门活动</a></li>
         <li class= <%= 'active' if "#{@menu_item}".eql?"history" %>><a href="/history">经典回顾</a></li>
-        <li class="page-scroll">
-          <a href="#contact"></a>
-        </li>
       </ul>
       <!--<ul class="nav navbar-nav pull-right">-->
         <!--<li><%=link_to '注册'%></li>-->
@@ -29,4 +28,6 @@
       <!--</ul>-->
     </div>
     <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
 </nav>

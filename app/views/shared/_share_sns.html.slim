@@ -1,0 +1,10 @@
+- share_info = { 'bd-des' => info && info[:des] ? info[:des] : '咖萌亲子' }
+- share_info[:text] = info && info[:text] ? info[:text] : '聚焦宝宝社交的亲子活动平台，为您开启完美的结伴亲子之旅'
+- share_info[:pic] = info && info[:pic] ? info[:pic] : 'http://www.kidsmeet.cn/assets/logo-a23d52fde2cbdeefadc28b20cdfc2f47.png'
+- share_info[:url] = info && info[:id] ? event_url(info[:id]) : 'http://www.kidsmeet.cn/'
+
+.bdsharebuttonbox data=share_info data-tag="share_#{info[:id]}"
+  a class='bds_tsina' data-cmd='tsina' href='#'
+  a class='bds_tqq' data-cmd='tqq' href='#'
+  a class='bds_renren' data-cmd='renren' href='#'
+  a class='bds_weixin' data-cmd='weixin' href='#'

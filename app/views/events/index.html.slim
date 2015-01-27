@@ -1,0 +1,11 @@
+- content_for :before_content do
+  .main-carousel
+    .jcarousel
+      ul
+        - @images.each do |image|
+          li.jcarousel-item
+            = image_tag "#{image.try(:data).try(:url, :medium)}", :class => "img-responsive"
+      .jcarousel-pagination
+        - @images.each do |image|
+          a href="#"
+== render :partial => 'event_list', :locals => {:events => @events}

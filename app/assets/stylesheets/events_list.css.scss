@@ -1,0 +1,86 @@
+@import 'shared';
+
+.activity-list {
+  .activity {
+    margin-bottom: 5px;
+    padding: 0 15px;
+    position: relative;
+    line-height: 1.42857;
+
+    .activity-box {
+      box-sizing: border-box;
+      line-height: 1.42857;
+      box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+      background-color: white;
+      border: 1px solid #ddd;
+
+      margin-bottom: 20px;
+      padding: 20px 20px 40px;
+
+      .image-container {
+        box-sizing: border-box;
+        background-color: white;
+        border: 1px solid #ddd;
+        overflow: hidden;
+        border-radius: 3px;
+        display: block;
+        line-height: 1.42857;
+        padding: 4px;
+
+        &:hover {
+          border: 1px solid $primary-color;
+        }
+
+        .a {
+          .wrapper {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .img{
+            padding-left: 3px;
+            padding-right: 3px;
+          }
+        }
+      }
+
+      .info-box{
+        overflow: hidden;
+        height: 139px;
+        margin: 0 5px 25px;
+
+        box-sizing: border-box;
+
+        h1 {
+          font-size: 22px;
+          border: 0;
+          margin: 16px 0 6px;
+          line-height: 26px;
+
+          a {
+            color: $font-color;
+            &:hover {
+              color: $primary-color;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#infscr-loading {
+  text-align: center;
+  div {
+    display: inline-block;
+    color: #585858;
+    em {
+      padding-left: 15px;
+    }
+  }
+  img {
+    display: inline-block;
+    width: 30px;
+  }
+}

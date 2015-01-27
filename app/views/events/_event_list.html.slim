@@ -1,0 +1,20 @@
+h1 热门活动
+.activity-list.row
+  - @events.each do |event|
+    .activity.col-md-4.col-sm-6
+      .activity-box
+        .image-container
+          a href="/events/#{event.id}"
+            .wrapper
+              = image_tag "#{event.brand_image_url}", :class => "img-responsive img-preview", :alt => "咖萌"
+
+        .info-box
+          h1
+            = link_to truncate(sanitize(event.title.html_safe),length: 20), event, { class: 'title'}
+          p #{truncate(sanitize(event.abstract.html_safe), length: 115, :omission => '...')}
+
+        .row
+          a.col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1.col-xs-10.col-xs-offset-1.btn.btn-primary.btn-large href="/events/#{event.id}" 我想体验
+
+= paginate @events
+= javascript_include_tag 'infinite-scroll'

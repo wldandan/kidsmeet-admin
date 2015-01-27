@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#source 'https://ruby.taobao.org'
 
 # core
 gem 'rails', '4.1.6'
@@ -9,28 +10,31 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'slim-rails'
+gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
-gem 'bootstrap-datepicker-rails'
-gem 'slim-rails'
-gem 'haml-rails'
-gem 'simple_form'
 
 # application
 gem 'rails_admin'
 gem 'devise'
 gem 'cancancan'
 gem 'ckeditor'
+gem 'kaminari', '~> 0.16.1'
+
+#sidekiq
+gem 'sinatra', require: false
+gem 'sidekiq'
+
+# Paperclip
 gem 'paperclip','3.4.2'
-
-# Upload image to qiniu storage service
+gem 'paperclip-compression'
 gem 'paperclip-qiniu'
-
-# Adding watermark into photos
 gem 'paperclip-watermark', :github => 'vikewoods/paperclip-watermark'
 
 group :development do
   gem 'annotate'
+  gem 'spring'
 end
 
 group :development, :test do

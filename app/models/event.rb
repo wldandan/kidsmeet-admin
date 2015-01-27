@@ -43,6 +43,10 @@ class Event < ActiveRecord::Base
   validates :end_time, presence: true
   validates :assets, presence: true
 
+  scope :upcommings, ->(time) { where("end_time >= ?", time).order('created_at DESC') }
+  scope :histories,  ->(time) { where("end_time < ?",  time).order('created_at DESC') }
+
+
   def adults_number
     attendances.inject(0) { |result, item|
       result + item.adults_number
@@ -60,11 +64,11 @@ class Event < ActiveRecord::Base
   end
 
   def detail_image_url
-    "#{CONFIG['image_server']}/#{main_image.id}/large_#{main_image.data_file_name}"
+    main_image.try(:data).try(:url, :large)
   end
 
-  def mail_image_url
-  n  "#{CONFIG['image_server']}/#{main_image.id}/original_#{main_image.data_file_name}"
+  def brand_image_url
+    main_image.try(:data).try(:url, :medium)
   end
 
   def main_image
@@ -74,8 +78,23 @@ class Event < ActiveRecord::Base
   def main_image_thumb_url
     "#{CONFIG['image_server']}/#{main_image.id}/thumb_#{main_image.data_file_name}"
   end
-
+  
   def brand_thumb_url
     "#{CONFIG['image_server']}/#{main_image.id}/thumb_#{main_image.data_file_name}"
   end
+
+  def duration
+    end_time - start_time
+  end
+
+  def as_json(options = { })
+    json = super(options)
+    json[:url] = "#{CONFIG['domain_name']}/events/#{id}"
+    json
+  end
+
+  def valuable_items_array
+    valuable_items ? valuable_items.split("\r\n").inject([]) { |result, element| result << element } : []
+  end
+
 end
