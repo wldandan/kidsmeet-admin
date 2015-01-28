@@ -1,2 +1,0 @@
-rvm_install_on_use_flag=1
-rvm --create use ruby-2.0.0-p481@kidsmeets-admin

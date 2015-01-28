@@ -57,7 +57,7 @@ RailsAdmin.config do |config|
     end
 
     create do
-      field :assets do
+      field :pictures do
         active true
       end
 
@@ -69,7 +69,7 @@ RailsAdmin.config do |config|
       field :attendances do
         #active true
       end
-      field :assets do
+      field :pictures do
         #active true
       end
       field :start_time
@@ -80,7 +80,7 @@ RailsAdmin.config do |config|
     end
 
     edit do
-      field :assets do
+      field :pictures do
         #active true
       end
 
