@@ -1,6 +1,3 @@
-/**
- * Created by twer on 12/27/14.
- */
 $(function(){
     $('.activity-list').infinitescroll({
       behavior: 'local',
