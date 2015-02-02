@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+  skip_before_action :authenticate_agent!, only: :join
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
 
   # POST /attendances
