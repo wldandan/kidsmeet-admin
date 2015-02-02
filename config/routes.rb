@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   root :to => redirect('/upcomings')
 
   get 'upcomings', to: 'events#upcomings'
+  get 'index', to: 'events#upcomings'
   get 'history', to: 'events#history'
 
   post 'attendances /join', to: 'attendances#join'

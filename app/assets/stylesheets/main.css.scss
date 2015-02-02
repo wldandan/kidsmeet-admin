@@ -250,10 +250,17 @@ header .intro-text .skills {
   .main-logo {
     width: 150px;
     height: 60px;
-    padding: 8px 15px;
+    padding: 3px 32px;
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
+    .navbar-brand {
+      display: inline-block;
+      padding: 0;
+      img {
+        width: 80px;
+      }
+    }
   }
 }
 
@@ -262,6 +269,9 @@ header .intro-text .skills {
   float: none;
   line-height: 45px;
   font-weight: 100;
+  &:hover {
+    color: #6ECDED
+  }
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -651,6 +661,10 @@ footer .icp {
     &:first-child {
       border-top: none;
     }
+  }
+
+  .navbar-default .main-logo .navbar-brand img {
+    width: 65px;
   }
 
 }
