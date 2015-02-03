@@ -8,7 +8,7 @@
 /public/ckeditor_assets/*
 /.bundle
 /env.sh
-/env_local.sh
+/env_dev.sh
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

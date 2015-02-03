@@ -13,12 +13,8 @@ class EventsController < ApplicationController
     render :template => "events/upcomings", :events => @events
   end
 
-  # GET /events/1
-  # GET /events/1.json
   def show
-    #require 'byebug'; debugger
     @attendance = Attendance.new
-
     respond_to do |format|
       format.html
       format.xls {response.headers['Content-Disposition'] = "attachment; filename=\"#{@event.title}.xls\"" }
@@ -27,15 +23,7 @@ class EventsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
   end
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def event_params
-    params.require(:event).permit(:title, :category,:contact_phone, :abstract, :content)
-  end
-
-
 end
