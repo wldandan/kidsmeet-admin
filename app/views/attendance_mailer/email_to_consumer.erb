@@ -4,6 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width"/>
 <style>
+
+    img#logo {
+        width: 70px;
+        height: 50px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
     #outlook a {
         padding:0;
     }
@@ -430,8 +438,7 @@
         display: block;
         width: auto !important;
         text-align: center;
-        background: #18bc9c;
-        border: 1px solid #2284a1;
+        background: #ff6800;
         color: #ffffff;
         padding: 8px 0;
     }
@@ -498,7 +505,7 @@
     table.small-button:hover td,
     table.medium-button:hover td,
     table.large-button:hover td {
-        background: #2795b6 !important;
+        background: #e84200 !important;
     }
 
     table.button:hover td a,
@@ -729,7 +736,7 @@
     }
 
     .header {
-        background: #999999;
+        background: #ff6800;
     }
 
     .footer .wrapper {
@@ -773,7 +780,7 @@
 <center>
 
 
-<table class="row header">
+<table class="row">
   <tr>
     <td class="center" align="center">
       <center>
@@ -785,13 +792,9 @@
               <table class="twelve columns">
                 <tr>
 
-                  <td class="twelve sub-columns">
-                    <img src="<%= @email_info[:logo]%>">
+                  <td class="twelve sub-columns header">
+                    <img id="logo" src="<%= @email_info[:logo]%>">
                   </td>
-                  <!--<td class="two sub-columns last" align="right" style="text-align:right; vertical-align:middle;">-->
-                    <!--<span class="template-label">咖萌亲子</span>-->
-                  <!--</td>-->
-                  <!--<td class="expander"></td>-->
                 </tr>
               </table>
 
@@ -858,9 +861,8 @@
                 <td>
 
                   <table class="button">
-                    <tr>
                       <td>
-                        <a href="http://www.kidsmeet.cn/upcomings">更多活动...</a>
+                        <a target="_blank" href="http://www.kidsmeet.cn/upcomings">更多活动...</a>
                       </td>
                     </tr>
                   </table>

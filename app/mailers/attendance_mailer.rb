@@ -24,7 +24,6 @@ class AttendanceMailer < ActionMailer::Base
 
   def set_email_configurations(attendance_id)
     @attendance = Attendance.find(attendance_id)
-    @email_info = {:logo => "#{CONFIG['email_image_host']}/assets/email/logo_with_brand.png"}
+    @email_info = {:logo => "#{CONFIG['image_host']}/assets/logo.png"}
   end
-
 end
