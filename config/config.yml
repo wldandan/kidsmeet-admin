@@ -1,6 +1,7 @@
 defaults: &defaults
   image_host: http://admin.kidmeets.cn
   qiniu_bucket: kidmeets-images
+  domain_name: http://kidsmeet.cn
 
 development:
    <<: *defaults
