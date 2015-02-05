@@ -90,6 +90,7 @@ class Event < ActiveRecord::Base
   def as_json(options = { })
     json = super(options)
     json[:url] = "#{CONFIG['domain_name']}/events/#{id}"
+    json[:main_image_url] = brand_image_url
     json
   end
 

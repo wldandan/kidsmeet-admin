@@ -1,4 +1,5 @@
 class AgentsController < ApplicationController
+  skip_before_action :authenticate_agent!
   before_action :set_agent, only: [:histories, :upcomings]
 
   def histories
