@@ -26,11 +26,11 @@
 
 FactoryGirl.define do
   factory :agent do
-    username              'wldandan'
-    email                 'wldandan@gmail.com'
-    wechat                'wldandan'
-    password              '12345678'
-    password_confirmation '12345678'
+    username              { 'wldandan' }
+    email                 { 'wldandan@gmail.com' }
+    wechat                { 'wldandan' }
+    password              { '12345678' }
+    password_confirmation { '12345678' }
 
     trait :with_published_event do
       after(:create) do |event|

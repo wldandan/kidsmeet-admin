@@ -32,10 +32,16 @@ FactoryGirl.define do
     content          { '到白垩纪搭个帐篷，在恐龙护卫下开心滴觉觉吧！帐篷睡具可以自带，没带也不要紧，我们已经为你们准备好啦！' }
     valuable_items   { '丰富学生的课余生活\r\n培养学生的动手能力和创造能力'}
     start_time       { Time.now }
-    end_time         { Time.now + 100 }
+    end_time         { Time.now + 24 * 60 * 60 }
 
     after(:build) { |event|
-      event.assets << FactoryGirl.build(:picture, :event => event)
+      event.pictures << FactoryGirl.build(:picture, :event => event)
     }
+
+    trait :with_attendances do
+      after(:create) do |event|
+        create_list(:attendance, 1, event:event)
+      end
+    end
   end
 end

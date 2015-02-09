@@ -36,7 +36,6 @@ class Attendance < ActiveRecord::Base
   private
 
   def set_user
-    byebug
     user = User.find_by_phone_number(phone_number)
     user = create_user_by_attendance if user.blank?
     self.user = user
