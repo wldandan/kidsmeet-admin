@@ -26,9 +26,9 @@
 
 FactoryGirl.define do
   factory :agent do
-    username              { 'wldandan' }
-    email                 { 'wldandan@gmail.com' }
-    wechat                { 'wldandan' }
+    sequence(:username)   { |n| "Agent#{n}" }
+    email                 { Faker::Internet.email }
+    sequence(:wechat)     { |n| "Wechat#{n}" }
     password              { '12345678' }
     password_confirmation { '12345678' }
 

@@ -16,11 +16,11 @@
 
 FactoryGirl.define do
   factory :attendance do
-    username        { '王磊' }
-    phone_number    { '15389041528' }
-    email           { 'wldandan@gmail.com' }
-    adults_number   { 1 }
-    children_number { 1 }
+    sequence(:username)     { |n| "用户#{n}" }
+    sequence(:phone_number) { |n| '%11d' %[n] }
+    email                   { Faker::Internet.email }
+    adults_number           { 1 }
+    children_number         { 1 }
 
     after(:build) do |attendance|
       attendance.class.skip_callback(:save, :before, :set_user)
