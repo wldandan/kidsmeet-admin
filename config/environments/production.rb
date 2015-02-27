@@ -72,4 +72,21 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.smtp_settings = {
+      :address => 'smtpcloud.sohu.com',
+      :port => 25,
+      :domain => 'wVlkVeSQ4mdxBQqB0kzbp3NsmEqmv14H.sendcloud.org',
+      :authentication => 'login',
+      :user_name => ENV['SEND_CLOUD_MAIL_USERNAME'],
+      :password => ENV['SEND_CLOUD_MAIL_PASSWORD'],
+  }
+
+  Paperclip::Attachment.default_options[:url] = "http://kidmeets-images.qiniudn.com/:id/:style_:basename.:extension"
+  Paperclip::Attachment.default_options[:path] = ":id/:style_:basename.:extension"
+
 end

@@ -9,3 +9,5 @@ staging:
   :concurrency: 10
 production:
   :concurrency: 25
+
+:daemon: true

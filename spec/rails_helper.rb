@@ -1,10 +1,10 @@
-
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara-screenshot/rspec'
 require 'devise'
+require 'sidekiq/testing'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
@@ -24,15 +24,21 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include FixtureLoaderHelper
 
-  config.before :suite do
-    DatabaseRewinder.clean_all
+  config.before (:each) do
+    Sidekiq::Worker.clear_all
   end
+
+  # config.before :suite do
+  #   DatabaseRewinder.clean_all
+  # end
 
   config.before(with_a_logged_user: true) do
     login_as(FactoryGirl.create(:user), scope: :user)
   end
 
-  config.after do
-    DatabaseRewinder.clean
-  end
+  # config.after do
+  #   DatabaseRewinder.clean
+  # end
 end
+
+Sidekiq::Testing.fake!
