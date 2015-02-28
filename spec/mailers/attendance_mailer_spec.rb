@@ -1,13 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe AttendanceMailer do
+  shared_examples_for 'send email by sidekiq' do
+    let (:sidekiq_jobs) { Sidekiq::Extensions::DelayedMailer.jobs }
 
-  it 'should send email to agent' do
-    expect { AttendanceMailer.delay_for(5.second).send_email_to_agent(1) }.to change(Sidekiq::Extensions::DelayedMailer.jobs, :size).by(1)
+    it 'add job to sidekiq queue' do
+      expect {subject}.to change(sidekiq_jobs, :size).by(1)
+    end
   end
 
-  it 'should send email to consumer' do
-    expect { AttendanceMailer.delay_for(5.second).send_email_to_consumer(1) }.to change(Sidekiq::Extensions::DelayedMailer.jobs, :size).by(1)
+  describe '#send_email_to_agent' do
+    subject { AttendanceMailer.delay_for(5.second).send_email_to_agent(1) }
+    it_behaves_like 'send email by sidekiq'
   end
 
+  describe '#send_email_to_consumer' do
+    subject { AttendanceMailer.delay_for(5.second).send_email_to_agent(1) }
+    it_behaves_like 'send email by sidekiq'
+  end
 end
