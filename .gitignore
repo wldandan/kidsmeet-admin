@@ -5,7 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/public/ckeditor_assets/*
+/public/images/attachments/*
 /.bundle
 /env.sh
 /env_dev.sh

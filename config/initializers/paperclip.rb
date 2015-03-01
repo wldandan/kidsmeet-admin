@@ -7,9 +7,11 @@ if Rails.env.production?
   Paperclip::Attachment.default_options[:bucket] = CONFIG['qiniu_bucket']
   Paperclip::Attachment.default_options[:use_timestamp] = false
   Paperclip::Attachment.default_options[:qiniu_host] = "http://#{CONFIG['qiniu_bucket']}.qiniudn.com"
+  Paperclip::Attachment.default_options[:url] = "http://kidmeets-images.qiniudn.com/:id/:style_:basename.:extension"
+  Paperclip::Attachment.default_options[:path] = ":id/:style_:basename.:extension"
 else
   Paperclip::Attachment.default_options.merge!({
-  :url => "/tmp/:class/:attachment/:id_partition/:style/:filename",
-  :path => "/tmp/:id/:style_:basename.:extension" })
+  :url => "#{CONFIG['image_host']}/images/attachments/:id/:style_:basename.:extension",
+  :path => "attachments/:id/:style_:basename.:extension" })
 end
 

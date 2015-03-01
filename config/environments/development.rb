@@ -43,11 +43,6 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  Paperclip::Attachment.default_options[:url] = "http://kidmeets-images.qiniudn.com/:id/:style_:basename.:extension"
-  Paperclip::Attachment.default_options[:path] = ":id/:style_:basename.:extension"
-  #:url  => "#{CONFIG['image_host']}/ckeditor_assets/pictures/:id/:style_:basename.:extension",
-  #    :path => ":id/:style_:basename.:extension"
-
   config.action_mailer.smtp_settings = {
       :address => 'smtpcloud.sohu.com',
       :port => 25,
