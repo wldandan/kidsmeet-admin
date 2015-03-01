@@ -1,0 +1,6 @@
+INSERT INTO `agents` (`id`, `username`, `email`, `wechat`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`)
+VALUES
+	(1,'','wldandan2@gmail.com','','$2a$10$w7a/uxmFOzVhsNYv.g8Rm.gworuryqKok.s1u8USYWVdtMXi9HlU.',NULL,NULL,NULL,6,'2014-12-14 10:20:06','2014-12-14 10:19:10','210.74.157.146','210.74.157.146','2014-11-20 15:30:56','2014-12-14 10:20:06'),
+	(2,'aa','wldanda2n@gmail.com','','$2a$10$w7a/uxmFOzVhsNYv.g8Rm.gworuryqKok.s1u8USYWVdtMXi9HlU.',NULL,NULL,NULL,1,'2014-12-14 10:19:41','2014-12-14 10:19:41','210.74.157.146','210.74.157.146','2014-11-20 15:37:49','2014-12-14 10:19:41'),
+	(3,'','wl333dandan@gmail.com','','$2a$10$LL8id4L8ZcQauUnmPgbnq.1ekAW3Fbn2x8jPt7v25uBk/FTE80Rlq',NULL,NULL,NULL,1,'2014-11-20 15:58:14','2014-11-20 15:58:14','127.0.0.1','127.0.0.1','2014-11-20 15:58:14','2014-11-20 15:58:14'),
+	(5,'小手牵大手','wldandan@gmail.com','gh_c4db86bdbeca','$2a$10$w7a/uxmFOzVhsNYv.g8Rm.gworuryqKok.s1u8USYWVdtMXi9HlU.',NULL,NULL,NULL,12,'2014-12-27 16:36:01','2014-12-13 10:31:03','183.62.233.200','210.74.157.146','2014-11-20 15:59:33','2014-12-27 16:36:01');
