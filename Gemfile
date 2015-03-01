@@ -44,6 +44,7 @@ group :development, :test do
   gem 'rspec-its'
   gem 'factory_girl_rails'
   gem 'ffaker'
+  gem 'letter_opener'
 end
 
 group :test do
