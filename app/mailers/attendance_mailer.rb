@@ -8,7 +8,7 @@ class AttendanceMailer < ActionMailer::Base
          :bcc => [],
          :subject => "感谢您的关注 [#{@attendance.event.title}]",
          :template_path => "attendance_mailer",
-         :template_name => "email_to_consumer");
+         :template_name => "email_to_consumer")
   end
 
   def send_email_to_agent(attendance_id)
@@ -17,7 +17,7 @@ class AttendanceMailer < ActionMailer::Base
          :bcc => [],
          :subject => "恭喜您，有#{@attendance.adults_number + @attendance.children_number}位新朋友加入您组织的活动",
          :template_path => "attendance_mailer",
-         :template_name => "email_to_agent");
+         :template_name => "email_to_agent")
   end
 
   private
