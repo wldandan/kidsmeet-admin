@@ -275,16 +275,6 @@
 }
 
 @media screen and (max-width: 991px) {
-  .activity-list .activity .activity-box {
-    padding: 12px 12px 35px;
-  }
-  .img-preview:hover {
-    animation: none;
-    -webkit-animation: none;
-    transform: scale(1);
-    -webkit-filter: grayscale(30%);
-  }
-
   .panel-content {
     padding-left: 10px;
     padding-right: 10px;
@@ -346,15 +336,6 @@
         opacity: .9;
       }
     }
-  }
-
-  .activity-list .activity {
-    padding: 0;
-  }
-
-  .activity-list .activity .activity-box {
-    margin-bottom: 10px;
-    padding: 10px 12px 40px;
   }
 
   .right-box {
