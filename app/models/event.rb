@@ -2,21 +2,22 @@
 #
 # Table name: events
 #
-#  id             :integer          not null, primary key
-#  agent_id       :integer
-#  title          :string(255)
-#  category       :string(255)
-#  abstract       :text
-#  content        :text
-#  valuable_items :text
-#  main_image_url :string(255)
-#  start_time     :datetime
-#  end_time       :datetime
-#  contact_phone  :string(255)
-#  address        :string(255)
-#  is_published   :boolean          default(TRUE)
-#  created_at     :datetime
-#  updated_at     :datetime
+#  id              :integer          not null, primary key
+#  agent_id        :integer
+#  title           :string(255)
+#  category        :string(255)
+#  abstract        :text
+#  content         :text
+#  valuable_items  :text
+#  main_image_url  :string(255)
+#  start_time      :datetime
+#  end_time        :datetime
+#  contact_phone   :string(255)
+#  address         :string(255)
+#  is_published    :boolean          default(TRUE)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  golden_data_url :string(255)
 #
 # Indexes
 #

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104161616) do
+ActiveRecord::Schema.define(version: 20150610130923) do
 
   create_table "agents", force: true do |t|
     t.string   "username",               default: "", null: false
@@ -80,9 +80,10 @@ ActiveRecord::Schema.define(version: 20150104161616) do
     t.datetime "end_time"
     t.string   "contact_phone"
     t.string   "address"
-    t.boolean  "is_published",   default: true
+    t.boolean  "is_published",    default: true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "golden_data_url"
   end
 
   add_index "events", ["contact_phone"], name: "index_events_on_contact_phone", using: :btree
