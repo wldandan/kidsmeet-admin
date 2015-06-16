@@ -1,5 +1,15 @@
 @import 'shared';
 
+.cover {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .gallery {
   margin: 0 0 50px 0;
   padding: 0;
@@ -7,6 +17,10 @@
 }
 
 .right-box {
+
+  .close-icon {
+    display: none;
+  }
 
   .panel-heading {
     background: none repeat scroll 0 0 $primary-color;
@@ -189,7 +203,6 @@
   }
 }
 
-
 .user-row {
   margin-bottom: 5px;
   border-width: 0px;
@@ -338,10 +351,32 @@
     }
   }
 
-  .right-box {
-    padding-left: 0;
-    padding-right: 0;
+  .sign-up-container {
+    display: none;
+    position: fixed;
+    bottom: -20px;
+    width: 100%;
+    z-index: 2001;
+
+    .close-icon {
+      display: block;
+      color: #ff6800;
+      font-size: 20px;
+      width: 30px;
+      position: absolute;
+      right: 0;
+    }
+
+    .panel-heading {
+      display: none;
+    }
+
+    .sign-up-form {
+      padding: 0;
+      border: none;
+    }
   }
+
   .ds-thread {
     padding: 2px;
     margin-right: 15px;

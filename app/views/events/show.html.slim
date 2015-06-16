@@ -33,7 +33,7 @@
           = @event.content.html_safe
 
   .col-sm-4.right-box
-    .row
+    .row.event-detail
       col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
         .panel.panel-primary
           .panel-heading 活动详情
@@ -73,48 +73,50 @@
                   - @event.valuable_items_array.each do |item|
                     li = item.html_safe
 
-    /- unless @event.is_expired?
-    /  .row#sign-up-from
-    /    col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
-    /      .panel.panel-primary
-    /        .panel-heading 我想体验
-    /        .panel-content
-    /          .sign-up-form
-    /            = form_for @attendance, :url => {:controller => "attendances", :action => "join"} do |f|
-    /              input type="hidden" name="attendance[event_id]" id="event_id" value=@event.id
-    /
-    /              .form-group
-    /                label for="username" 姓名*
-    /                input type="text" required="true" x-moz-errormessage="请输入您的真实姓名" class="form-control" id="username" placeholder="请输入您的真实姓名" name="attendance[username]"
-    /
-    /              .form-group
-    /                label for="phone_number" 手机号*
-    /                input type="text" minlength="11" maxlength="11" required="true" placeholder="手机号将作为登陆账号" x-moz-errormessage="请输入合法的11位手机号(例如: 13512341234" name="attendance[phone_number]" pattern="^[0-9]+$" id="phone_number" class="form-control"
-    /
-    /              .form-group
-    /                label for="email" 电子邮箱*
-    /                input type="email" placeholder="通知会发送邮件" required="true" maxlength="50" x-moz-errormessage="请输入合法的电子邮件地址(例如: example@example.com)" pattern="^([A-Za-z0-9_\-\.])+\@(?!(?:[A-Za-z0-9_\-\.]+\.)?([A-Za-z]{2,4})\.\2)([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$" class="form-control" id="email" name="attendance[email]"
-    /
-    /              .form-group
-    /                label for="adults_number" 成人数量
-    /                select.form-control id="adults_number" name="attendance[adults_number]"
-    /                  option 1
-    /                  option 2
-    /                  option 3
-    /                  option 4
-    /                  option 5
-    /
-    /
-    /              .form-group
-    /                label for="children_number" 儿童数量
-    /                select.form-control id="children_number" name="attendance[children_number]"
-    /                  option 1
-    /                  option 2
-    /                  option 3
-    /
-    /              .form-group
-    /                label
-    /                button type="submit" class="btn btn-primary" 立刻报名
+    - unless @event.is_expired?
+      .row#sign-up-from.sign-up-container
+        col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
+          .panel.panel-primary
+            .close-icon
+              i.fa.fa-times
+            .panel-heading 我想体验
+            .panel-content
+              .sign-up-form
+                = form_for @attendance, :url => {:controller => "attendances", :action => "join"} do |f|
+                  input type="hidden" name="attendance[event_id]" id="event_id" value=@event.id
+
+                  .form-group
+                    label for="username" 姓名*
+                    input type="text" required="true" x-moz-errormessage="请输入您的真实姓名" class="form-control" id="username" placeholder="请输入您的真实姓名" name="attendance[username]"
+
+                  .form-group
+                    label for="phone_number" 手机号*
+                    input type="text" minlength="11" maxlength="11" required="true" placeholder="手机号将作为登陆账号" x-moz-errormessage="请输入合法的11位手机号(例如: 13512341234" name="attendance[phone_number]" pattern="^[0-9]+$" id="phone_number" class="form-control"
+
+                  .form-group
+                    label for="email" 电子邮箱*
+                    input type="email" placeholder="通知会发送邮件" required="true" maxlength="50" x-moz-errormessage="请输入合法的电子邮件地址(例如: example@example.com)" pattern="^([A-Za-z0-9_\-\.])+\@(?!(?:[A-Za-z0-9_\-\.]+\.)?([A-Za-z]{2,4})\.\2)([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$" class="form-control" id="email" name="attendance[email]"
+
+                  .form-group
+                    label for="adults_number" 成人数量
+                    select.form-control id="adults_number" name="attendance[adults_number]"
+                      option 1
+                      option 2
+                      option 3
+                      option 4
+                      option 5
+
+
+                  .form-group
+                    label for="children_number" 儿童数量
+                    select.form-control id="children_number" name="attendance[children_number]"
+                      option 1
+                      option 2
+                      option 3
+
+                  .form-group
+                    label
+                    button type="submit" class="btn btn-primary" 立刻报名
 
     .row
       col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
@@ -142,5 +144,7 @@
     i.fa.fa-chevron-circle-up
 - unless @event.is_expired?
   .sign-up-tab
-    a href=@event.golden_data_url 立刻报名
+    a href='#' 立刻报名
+
+.cover
 
