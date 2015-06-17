@@ -21,10 +21,10 @@ window.onresize = function() {
 
 function displaySignUpContainer() {
   $('.cover').show();
-  $('.sign-up-container').css({ "display": "block", top: $(window).height() }).animate({ top: 409 }, 300);
+  $('.sign-up-container').css({ "display": "block", top: $(window).height() }).animate({ top: $(window).height() - $('#sign-up-from .panel-content').outerHeight() }, 300);
 }
 
 function removeSignUpContainer() {
   $('.cover').hide();
-  $('.sign-up-container').css({ "display": "none", top: 409 }).animate({ top: $(window).height() }, 300);
+  $('.sign-up-container').hide();
 }
