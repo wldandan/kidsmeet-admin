@@ -47,12 +47,12 @@
                   li.row
                     .col-md-12.col-sm-12.col-xs-12
                       span.label.time_item #{l @event.start_time, :format => :time_format} - #{l @event.end_time, :format => :time_format}
-                      .label.label-info.attendance_number_item
-                        i.fa.fa-male
-                        span.badge #{@event.adults_number}
-                        span.separator |
-                        i.fa.fa-child
-                        span.badge #{@event.children_number}
+                      /.label.label-info.attendance_number_item
+                      /  i.fa.fa-male
+                      /  span.badge #{@event.adults_number}
+                      /  span.separator |
+                      /  i.fa.fa-child
+                      /  span.badge #{@event.children_number}
 
                 - if @event.address.present?
                   li.row
