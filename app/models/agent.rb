@@ -17,6 +17,7 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  star_mother_id         :integer
 #
 # Indexes
 #

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629114844) do
+ActiveRecord::Schema.define(version: 20150629134415) do
 
   create_table "agents", force: true do |t|
     t.string   "username",               default: "", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150629114844) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "star_mother_id"
   end
 
   add_index "agents", ["email"], name: "index_agents_on_email", unique: true, using: :btree
