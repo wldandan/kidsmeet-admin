@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :attendances
   resources :users
+  resources :star_mothers, only: [:index, :show]
 
   resources :events do
     collection do
