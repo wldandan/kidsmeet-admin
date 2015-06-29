@@ -1,0 +1,17 @@
+h1 达人妈妈
+.activity-list.row
+  - @star_mothers.each do |star_mother|
+    .activity.col-md-4.col-sm-6
+      .activity-box
+        .image-container
+          a href="/events/#{star_mother.id}"
+            .wrapper
+              = image_tag "#{star_mother.brand_image_url}", :class => "img-responsive img-preview", :alt => "咖萌"
+
+        .info-box
+          h1
+            = link_to truncate(sanitize(star_mother.introduction.html_safe),length: 20), event, { class: 'title'}
+          p #{truncate(sanitize(star_mother.abstract.html_safe), length: 115, :omission => '...')}
+
+= paginate @star_mothers
+= javascript_include_tag 'infinite-scroll'
