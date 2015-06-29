@@ -26,6 +26,7 @@ class Ckeditor::Picture < Ckeditor::Asset
 
   belongs_to :agent
   belongs_to :event
+  belongs_to :star_mother
 
   has_attached_file :data,
                     :processors => [:watermark],

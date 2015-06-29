@@ -28,6 +28,7 @@
 class Event < ActiveRecord::Base
 
   belongs_to :agent
+  belongs_to :star_mother
   has_many :pictures, :class_name=> "Ckeditor::Picture", :autosave => true
   accepts_nested_attributes_for :pictures, :allow_destroy => true
 
