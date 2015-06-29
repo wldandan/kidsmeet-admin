@@ -36,7 +36,7 @@ RailsAdmin.config do |config|
     end
 
     create do
-      field :pictures do
+      field :picture do
         active true
       end
 
@@ -46,7 +46,7 @@ RailsAdmin.config do |config|
     end
 
     edit do
-      field :pictures do
+      field :picture do
         #active true
       end
 

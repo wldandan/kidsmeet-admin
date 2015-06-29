@@ -53,6 +53,9 @@ zh-CN:
       event:
         one: 亲子活动
         other: 亲子活动
+      star_mother:
+        one: 达人妈妈
+        other: 达人妈妈
       ckeditor/picture:
         one: 图片
         other: 图片
@@ -72,6 +75,13 @@ zh-CN:
         contact_phone: 联系电话
         address: 活动地址
         is_published: 是否发布
+        start_time: 开始时间
+        end_time: 结束时间
+      star_mother:
+        id: 编号
+        name: 姓名
+        profession: 特长
+        introduction: 简介
         start_time: 开始时间
         end_time: 结束时间
       event/attendances:
