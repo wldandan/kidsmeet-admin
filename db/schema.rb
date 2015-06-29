@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610130923) do
+ActiveRecord::Schema.define(version: 20150629114844) do
 
   create_table "agents", force: true do |t|
     t.string   "username",               default: "", null: false
@@ -91,6 +91,13 @@ ActiveRecord::Schema.define(version: 20150610130923) do
 
   create_table "roles", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "star_mothers", force: true do |t|
+    t.string   "name"
+    t.string   "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
