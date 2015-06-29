@@ -18,6 +18,51 @@ RailsAdmin.config do |config|
 
   #config.audit_with :history, User
 
+  config.model StarMother do
+
+    navigation_label '资源管理'
+    label_plural '达人妈妈'
+    label '达人妈妈'
+
+    list do
+      field :id do
+        column_width 50
+      end
+      field :name
+      field :profession
+      field :introduction do
+        column_width 100
+      end
+    end
+
+    create do
+      field :pictures do
+        active true
+      end
+
+      field :name
+      field :profession
+      field :introduction
+    end
+
+    edit do
+      field :pictures do
+        #active true
+      end
+
+      field :name
+      field :profession
+      field :introduction
+    end
+
+    show do
+      field :name
+      field :profession
+      field :introduction
+    end
+
+  end
+
   config.model Event do
 
     navigation_label '资源管理'
