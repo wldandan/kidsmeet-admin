@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20150629114844) do
 
   create_table "star_mothers", force: true do |t|
     t.string   "name"
+    t.string   "profession"
     t.string   "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
