@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629134415) do
+ActiveRecord::Schema.define(version: 20150702133149) do
 
   create_table "agents", force: true do |t|
     t.string   "username",               default: "", null: false
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20150629134415) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "golden_data_url"
+    t.integer  "star_mother_id"
   end
 
   add_index "events", ["contact_phone"], name: "index_events_on_contact_phone", using: :btree
