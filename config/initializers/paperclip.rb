@@ -12,6 +12,6 @@ if Rails.env.production?
 else
   Paperclip::Attachment.default_options.merge!({
   :url => "#{CONFIG['image_host']}/images/attachments/:id/:style_:basename.:extension",
-  :path => "attachments/:id/:style_:basename.:extension" })
+  :path => "public/images/attachments/:id/:style_:basename.:extension" })
 end
 
