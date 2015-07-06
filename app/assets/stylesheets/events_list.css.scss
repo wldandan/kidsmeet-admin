@@ -1,7 +1,7 @@
 @import 'shared';
 
 .activity-list {
-  .activity {
+  .activity, .graph-container {
     margin-bottom: 5px;
     padding: 0 15px;
     position: relative;
@@ -66,6 +66,10 @@
           }
         }
       }
+    }
+
+    .graph-container {
+      margin: 0;
     }
   }
 }

@@ -15,6 +15,7 @@
 //= require jquery.jcarousel.min
 //= require jquery.jscroll.min
 //= require jquery.validate.min
+//= require jquery.masonry.min
 //= require bootstrap.min
 //= require comments
 //= require share-sns-config
@@ -23,3 +24,4 @@
 //= require re-arrange-event
 //= require image-carousel
 //= require form-validator
+//= require masonry

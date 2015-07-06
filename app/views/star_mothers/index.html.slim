@@ -1,11 +1,8 @@
 h1 达人妈妈
-.activity-list.row.masonry-container
+.activity-list.masonry-container
   - @star_mothers.each do |star_mother|
-    .activity.col-md-4.col-sm-6.item
-      .image-container
-        a href="/star_mothers/#{star_mother.id}"
-          .wrapper
-            = image_tag "#{star_mother.picture.url}", :class => "img-responsive img-preview", :alt => "咖萌"
+    .graph-container.activity
+      = image_tag "#{star_mother.picture.url}", :class => "img-responsive img-preview", :alt => "咖萌"
 
 = paginate @star_mothers
 = javascript_include_tag 'infinite-scroll'
