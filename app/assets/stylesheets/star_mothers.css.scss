@@ -4,8 +4,18 @@
 
 .masonry-container {
   min-height: 500px;
+
   .graph-container {
-    width: 33%;
+    width: 32%;
+    margin-left: 1%;
+    margin-bottom: 10px;
+
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    border: 1px solid #ddd;
+
+    padding: 5px;
+
     img {
       width: 100%;
     }
@@ -19,8 +29,6 @@
       bottom: 0;
       left: 0;
       right: 0;
-      margin-left: 15px;
-      margin-right: 15px;
       background-color: rgba(221, 99, 0, 0.8);
       cursor: pointer;
 
@@ -55,6 +63,30 @@
     -ms-transform: none;
     -o-transform: none;
     transform: none;
+  }
+}
+
+.introduction-container {
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: 20px;
+  padding: 15px;
+
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  background-color: white;
+  border: 1px solid #ddd;
+
+  .img-preview:hover {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+
+  h3 {
+    border-bottom: 1px dashed #393939;
+    padding-bottom: 5px;
   }
 }
 

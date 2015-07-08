@@ -8,5 +8,6 @@ class StarMothersController < ApplicationController
 
   def show
     @star_mother = StarMother.find(params[:id])
+    @events = Event.first(5)
   end
 end
