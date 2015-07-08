@@ -9,6 +9,44 @@
     img {
       width: 100%;
     }
+
+    .graph-cover {
+      color: white;
+      display: none;
+      z-index: 100;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-left: 15px;
+      margin-right: 15px;
+      background-color: rgba(221, 99, 0, 0.8);
+      cursor: pointer;
+
+      .introduction {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 5%;
+        h1 {
+          border-bottom-color: white;
+          font-weight: normal;
+          text-shadow: none;
+          font-size: 22px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+      }
+
+    }
+
+    &:hover {
+      .graph-cover {
+        display: block;
+      }
+    }
   }
 
   .img-preview:hover {
@@ -17,5 +55,17 @@
     -ms-transform: none;
     -o-transform: none;
     transform: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .masonry-container .graph-container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .masonry-container .graph-container {
+    width: 100%;
   }
 }
