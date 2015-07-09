@@ -7,6 +7,11 @@ h1 达人妈妈
     h3 = @star_mother.profession
     p = @star_mother.introduction
 
+h1 作品展示
+.introduction-container.row
+  .col-md-12.col-sm-12.col-xs-12.flex-order-3
+    = @star_mother.works.html_safe
+
 h1 活动列表
 .activity-list.row
   - @events.each do |event|
