@@ -82,6 +82,7 @@ zh-CN:
         name: 姓名
         profession: 特长
         introduction: 简介
+        works: 作品展示
         start_time: 开始时间
         end_time: 结束时间
       event/attendances:

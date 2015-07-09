@@ -43,6 +43,7 @@ RailsAdmin.config do |config|
       field :name
       field :profession
       field :introduction
+      field :works, :ck_editor
     end
 
     edit do
@@ -53,12 +54,18 @@ RailsAdmin.config do |config|
       field :name
       field :profession
       field :introduction
+      field :works, :ck_editor
     end
 
     show do
       field :name
       field :profession
       field :introduction
+      field :works do
+        formatted_value do
+          (bindings[:view].tag(:div) << value.html_safe)
+        end
+      end
     end
 
   end
