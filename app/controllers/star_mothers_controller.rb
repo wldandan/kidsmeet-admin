@@ -7,6 +7,7 @@ class StarMothersController < ApplicationController
   end
 
   def show
+    @menu_item = 'star_mothers'
     @star_mother = StarMother.find(params[:id])
     @events = Event.first(5)
   end
