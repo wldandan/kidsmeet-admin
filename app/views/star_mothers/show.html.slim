@@ -1,11 +1,11 @@
 h1 达人妈妈
 .introduction-container.row
   .col-md-6
-    = image_tag "#{@star_mother.picture.url}", :class => "img-responsive img-preview", :alt => "咖萌"
+    = image_tag "#{@star_mother.try(:picture).try(:url)}", :class => "img-responsive img-preview", :alt => "咖萌"
   .col-md-6
-    h2 = @star_mother.name
-    h3 = @star_mother.profession
-    p = @star_mother.introduction
+    h2 = @star_mother.try(:name)
+    h3 = @star_mother.try(:profession)
+    p = @star_mother.try(:introduction)
 
 .row.flex-sm-layout
   .clearfix
@@ -14,7 +14,7 @@ h1 达人妈妈
       .col-md-12.col-sm-12.col-xs-12
         h1 作品展示
         .works-container
-          = @star_mother.works.html_safe if @star_mother.works
+          = @star_mother.try(:works).try(:html_safe)
 
   .col-sm-4
     .row
