@@ -7,28 +7,33 @@ h1 达人妈妈
     h3 = @star_mother.profession
     p = @star_mother.introduction
 
-.row
-  .col-md-8.col-sm-8.col-xs-8.flex-order-3.works
-    h1 作品展示
-    .works-container
-      = @star_mother.works.html_safe
+.row.flex-sm-layout
+  .clearfix
+  .col-sm-8
+    .row.works
+      .col-md-12.col-sm-12.col-xs-12
+        h1 作品展示
+        .works-container
+          = @star_mother.works.html_safe if @star_mother.works
 
-  .col-md-4.col-sm-4.col-xs-4.flex-order-3
-    h2 活动列表
-    .activity-list.row
-      - @events.each do |event|
-        .activity.col-md-12.col-sm-12
-          .activity-box
-            .image-container
-              a href="/events/#{event.id}"
-                .wrapper
-                  = image_tag "#{event.brand_image_url}", :class => "img-responsive img-preview", :alt => "咖萌"
+  .col-sm-4
+    .row
+      .col-md-12.col-sm-12.col-xs-12
+        h2 活动列表
+        .activity-list.row
+          - @events.each do |event|
+            .activity.col-md-12.col-sm-12
+              .activity-box
+                .image-container
+                  a href="/events/#{event.id}"
+                    .wrapper
+                      = image_tag "#{event.brand_image_url}", :class => "img-responsive img-preview", :alt => "咖萌"
 
-            .info-box
-              h1
-                = link_to truncate(sanitize(event.title.html_safe), length: 20), event, {class: 'title'}
-              p #{truncate(sanitize(event.abstract.html_safe), length: 115, :omission => '...')}
+                .info-box
+                  h1
+                    = link_to truncate(sanitize(event.title.html_safe), length: 20), event, {class: 'title'}
+                  p #{truncate(sanitize(event.abstract.html_safe), length: 115, :omission => '...')}
 
-            .row
-              a.col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1.col-xs-10.col-xs-offset-1.btn.btn-primary.btn-large href="/events/#{event.id}"
-                = event.is_expired? ? '查看详情' : '我想体验'
+                .row
+                  a.col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1.col-xs-10.col-xs-offset-1.btn.btn-primary.btn-large href="/events/#{event.id}"
+                    = event.is_expired? ? '查看详情' : '我想体验'

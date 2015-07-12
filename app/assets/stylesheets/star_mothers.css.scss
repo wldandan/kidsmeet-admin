@@ -113,4 +113,14 @@
   .masonry-container .graph-container {
     width: 100%;
   }
+
+  .col-sm-8, .col-sm-4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .col-xs-12, .col-sm-12, .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
