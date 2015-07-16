@@ -117,6 +117,11 @@
 @media screen and (max-width: 768px) {
   .masonry-container .graph-container {
     width: 100%;
+    .graph-cover {
+      height: 120px;
+      top: auto;
+      margin: 5px;
+    }
   }
 
   .col-sm-8, .col-sm-4 {
