@@ -2,17 +2,17 @@
 #
 # Table name: attendances
 #
-#  id           :integer          not null, primary key
-#  event_id     :integer
-#  user_id      :integer
-#  phone_number :string(255)
-#  created_at   :datetime
-#  updated_at   :datetime
-#  baby_name    :string(255)
-#  baby_age     :integer
-#  mother_name  :string(255)
-#  wechat_id    :string(255)
-#  event_time   :string(255)
+#  id            :integer          not null, primary key
+#  event_id      :integer
+#  user_id       :integer
+#  phone_number  :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  baby_name     :string(255)
+#  baby_age      :integer
+#  mother_name   :string(255)
+#  wechat_id     :string(255)
+#  event_time_id :integer
 #
 
 require 'rails_helper'

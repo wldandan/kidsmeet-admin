@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150718054325) do
     t.integer  "baby_age"
     t.string   "mother_name"
     t.string   "wechat_id"
-    t.string   "event_time"
+    t.integer  "event_time_id"
   end
 
   create_table "ckeditor_assets", force: true do |t|
@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 20150718054325) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "event_times", force: true do |t|
+    t.string   "time"
+    t.integer  "number_limit"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -4,7 +4,7 @@ class AddExtraFieldsToAttendance < ActiveRecord::Migration
     add_column :attendances, :baby_age, :integer
     add_column :attendances, :mother_name, :string
     add_column :attendances, :wechat_id, :string
-    add_column :attendances, :event_time, :string
+    add_column :attendances, :event_time_id, :integer
 
     remove_column :attendances, :children_number, :integer
     remove_column :attendances, :adults_number, :integer
