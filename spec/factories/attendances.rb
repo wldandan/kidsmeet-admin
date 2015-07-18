@@ -17,7 +17,7 @@
 
 FactoryGirl.define do
   factory :attendance do
-    sequence(:username)     { |n| "用户#{n}" }
+    sequence(:mother_name)     { |n| "用户#{n}" }
     sequence(:phone_number) { |n| '%11d' %[n] }
     email                   { Faker::Internet.email }
     adults_number           { 1 }

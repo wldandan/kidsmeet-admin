@@ -22,11 +22,11 @@ class Ability
       can :read, Agent, id: user.id if user
       can :update, Agent, id: user.id if user
 
-      can :read, Ckeditor::Picture, :event => {:id => user.event_ids}
-      can :read, Ckeditor::Picture, :agent => {:id => user.id}
+      can :read, Ckeditor::Picture, event: {id: user.event_ids}
+      can :read, Ckeditor::Picture, agent: {id: user.id}
       can :read, Ckeditor::Picture, assetable_id: user.id if user
 
-      can :manage, Attendance, :event => {:id => user.event_ids}
+      can :manage, Attendance, event: {id: user.event_ids}
 
       can :access, :rails_admin
       can :dashboard

@@ -59,6 +59,9 @@ zh-CN:
       ckeditor/picture:
         one: 图片
         other: 图片
+      event_time:
+        one: 活动时间
+        other: 活动时间
     attributes:
       event:
         id: 编号
@@ -70,6 +73,7 @@ zh-CN:
         attendances: 活动参与者
         #main_image_url: 主图链接
         #main_image_thumb_url: 图片
+        event_times: 活动时间
         brand_thumb_url: 图片
         assets: 宣传图片
         contact_phone: 联系电话
@@ -87,10 +91,15 @@ zh-CN:
         end_time: 结束时间
       event/attendances:
         event: 活动名称
-        username: 用户名
+        baby_name: 宝宝昵称
+        baby_age: 宝宝年龄
+        mother_name: 妈妈姓名
         phone_number: 电话
-        children_number: 小孩数量
-        adults_number: 成人数量
+        wechat_id: 微信号
+      event_time:
+        time: 活动时间
+        number_limit: 人数限制
+        event: 活动
       ckeditor/picture:
         id: 编号
         title: 标题
@@ -99,10 +108,11 @@ zh-CN:
         height: 高度
       attendance:
         event: 活动名称
-        username: 用户名
+        baby_name: 宝宝昵称
+        baby_age: 宝宝年龄
+        mother_name: 妈妈姓名
         phone_number: 电话
-        children_number: 小孩数量
-        adults_number: 成人数量
+        wechat_id: 微信号
   date:
     abbr_day_names:
     - 日

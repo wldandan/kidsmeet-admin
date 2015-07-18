@@ -30,14 +30,14 @@ class Event < ActiveRecord::Base
 
   belongs_to :agent
   belongs_to :star_mother
-  has_many :pictures, :class_name=> "Ckeditor::Picture", :autosave => true
-  accepts_nested_attributes_for :pictures, :allow_destroy => true
+  has_many :pictures, class_name: "Ckeditor::Picture", autosave: true
+  accepts_nested_attributes_for :pictures, allow_destroy: true
 
-  has_many :attendances, :inverse_of => :event
-  accepts_nested_attributes_for :attendances, :allow_destroy => true
+  has_many :attendances, inverse_of: :event
+  accepts_nested_attributes_for :attendances, allow_destroy: true
 
-  has_many :event_times
-  accepts_nested_attributes_for :event_times, :allow_destroy => true
+  has_many :event_times, inverse_of: :event
+  accepts_nested_attributes_for :event_times, allow_destroy: true
 
   #validates :agent, presence: true
   validates :title, presence: true
@@ -45,8 +45,6 @@ class Event < ActiveRecord::Base
   validates :abstract, presence: true
   validates :content, presence: true
   validates :valuable_items, presence: true
-  validates :start_time, presence: true
-  validates :end_time, presence: true
   validates :pictures, presence: true
 
   scope :upcommings, ->(time) { where("end_time >= ?", time).order('created_at DESC') }

@@ -118,14 +118,12 @@ RailsAdmin.config do |config|
       field :contact_phone
       field :abstract
       field :address
+      field :event_times do
+        inverse_of :event
+      end
       field :attendances do
         #active true
       end
-      field :pictures do
-        #active true
-      end
-      field :start_time
-      field :end_time
       field :is_published
       field :valuable_items
       field :content, :ck_editor
@@ -145,8 +143,9 @@ RailsAdmin.config do |config|
         #active true
         inverse_of :event
       end
-      field :start_time
-      field :end_time
+      field :event_times do
+        inverse_of :event
+      end
       field :is_published
       field :valuable_items
       field :content, :ck_editor
@@ -169,8 +168,7 @@ RailsAdmin.config do |config|
         active true
       end
 
-      field :start_time
-      field :end_time
+      field :event_times
       field :valuable_items
       field :content do
         formatted_value do
@@ -188,37 +186,69 @@ RailsAdmin.config do |config|
 
     list do
       field :event
-      field :username
+      field :baby_name
+      field :baby_age
+      field :mother_name
       field :phone_number
-      field :children_number
-      field :adults_number
+      field :wechat_id
     end
 
     show do
       field :event
-      field :username
+      field :baby_name
+      field :baby_age
+      field :mother_name
       field :phone_number
-      field :children_number
-      field :adults_number
+      field :wechat_id
     end
 
     edit do
       field :event
-      field :username
+      field :baby_name
+      field :baby_age
+      field :mother_name
       field :phone_number
-      field :children_number
-      field :adults_number
+      field :wechat_id
     end
 
     create do
       field :event
-      field :username
+      field :baby_name
+      field :baby_age
+      field :mother_name
       field :phone_number
-      field :children_number
-      field :adults_number
+      field :wechat_id
     end
 
   end
+
+  config.model 'EventTime' do
+    navigation_label '资源管理'
+    label_plural '活动时间'
+    label '活动时间'
+
+    list do
+      field :time
+      field :number_limit
+    end
+
+    show do
+      field :time
+      field :number_limit
+    end
+
+    edit do
+      field :time
+      field :number_limit
+    end
+
+    create do
+      field :time
+      field :number_limit
+    end
+
+  end
+
 
 
   config.model 'Agent' do
