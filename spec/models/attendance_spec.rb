@@ -12,6 +12,7 @@
 #  baby_age     :integer
 #  mother_name  :string(255)
 #  wechat_id    :string(255)
+#  event_time   :string(255)
 #
 
 require 'rails_helper'
