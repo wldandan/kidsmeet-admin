@@ -13,4 +13,8 @@
 
 class EventTime < ActiveRecord::Base
   belongs_to :event
+
+  def number_left
+    number_limit - event.attendances.where(event_time_id: id).count
+  end
 end
