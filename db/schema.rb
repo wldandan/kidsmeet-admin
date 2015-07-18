@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150718054325) do
+ActiveRecord::Schema.define(version: 20150718093047) do
 
   create_table "agents", force: true do |t|
     t.string   "username",               default: "", null: false
@@ -71,11 +71,12 @@ ActiveRecord::Schema.define(version: 20150718054325) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "event_times", force: true do |t|
-    t.string   "time"
     t.integer  "number_limit"
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "display_time"
+    t.datetime "date_time"
   end
 
   create_table "events", force: true do |t|

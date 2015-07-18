@@ -228,22 +228,26 @@ RailsAdmin.config do |config|
     label '活动时间'
 
     list do
-      field :time
+      field :display_time
+      field :date_time
       field :number_limit
     end
 
     show do
-      field :time
+      field :display_time
+      field :date_time
       field :number_limit
     end
 
     edit do
-      field :time
+      field :display_time
+      field :date_time
       field :number_limit
     end
 
     create do
-      field :time
+      field :display_time
+      field :date_time
       field :number_limit
     end
 
