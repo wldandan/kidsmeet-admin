@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709121328) do
+ActiveRecord::Schema.define(version: 20150718051755) do
 
   create_table "agents", force: true do |t|
     t.string   "username",               default: "", null: false
@@ -42,13 +42,13 @@ ActiveRecord::Schema.define(version: 20150709121328) do
   create_table "attendances", force: true do |t|
     t.integer  "event_id"
     t.integer  "user_id"
-    t.integer  "children_number"
-    t.integer  "adults_number"
-    t.string   "username"
     t.string   "phone_number"
-    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "baby_name"
+    t.integer  "baby_age"
+    t.string   "mother_name"
+    t.string   "wechat_id"
   end
 
   create_table "ckeditor_assets", force: true do |t|
