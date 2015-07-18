@@ -103,7 +103,7 @@
                     label for="event_time_id" 报名时段
                     select.form-control id="event_time_id" name="attendance[event_time_id]"
                       - @event.event_times.each do |event_time|
-                        option value="" #{event_time.time}
+                        option value="#{event_time.id}" #{event_time.display_time} (#{event_time.date_time})
 
                   .form-group
                     label

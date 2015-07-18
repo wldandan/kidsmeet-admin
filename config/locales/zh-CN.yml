@@ -97,7 +97,8 @@ zh-CN:
         phone_number: 电话
         wechat_id: 微信号
       event_time:
-        time: 活动时间
+        display_time: 星期
+        date_time: 活动时间
         number_limit: 人数限制
         event: 活动
       ckeditor/picture:
