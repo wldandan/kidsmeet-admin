@@ -19,6 +19,7 @@
 #  updated_at      :datetime
 #  golden_data_url :string(255)
 #  star_mother_id  :integer
+#  goden_data_url  :string(255)
 #
 # Indexes
 #
