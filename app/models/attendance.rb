@@ -26,13 +26,15 @@ class Attendance < ActiveRecord::Base
   belongs_to :user
   has_one :event_time
 
-  validates :username,          presence: true
-  validates :phone_number,      presence: true
-  validates :adults_number,     presence: true
-  validates :children_number,   presence: true
+  validates :event_id,          presence: true
+  validates :baby_name,      presence: true
+  validates :baby_age,     presence: true
+  validates :mother_name,   presence: true
+  validates :phone_number,   presence: true
+  validates :event_time_id,   presence: true
 
   def title
-    "#{username}-#{phone_number}"
+    "#{mother_name}-#{phone_number}"
   end
 
   private
@@ -44,8 +46,7 @@ class Attendance < ActiveRecord::Base
   end
 
   def create_user_by_attendance
-    user = User.new({ username:     username,
-                      email:        email,
+    user = User.new({ username:     mother_name,
                       phone_number: phone_number })
     user.save
     user

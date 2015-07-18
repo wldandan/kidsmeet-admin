@@ -36,6 +36,9 @@ class Event < ActiveRecord::Base
   has_many :attendances, :inverse_of => :event
   accepts_nested_attributes_for :attendances, :allow_destroy => true
 
+  has_many :event_times
+  accepts_nested_attributes_for :event_times, :allow_destroy => true
+
   #validates :agent, presence: true
   validates :title, presence: true
   validates :category, presence: true

@@ -47,12 +47,6 @@
                   li.row
                     .col-md-12.col-sm-12.col-xs-12
                       span.label.time_item #{l @event.start_time, :format => :time_format} - #{l @event.end_time, :format => :time_format}
-                      /.label.label-info.attendance_number_item
-                      /  i.fa.fa-male
-                      /  span.badge #{@event.adults_number}
-                      /  span.separator |
-                      /  i.fa.fa-child
-                      /  span.badge #{@event.children_number}
 
                 - if @event.address.present?
                   li.row
@@ -86,33 +80,30 @@
                   input type="hidden" name="attendance[event_id]" id="event_id" value=@event.id
 
                   .form-group
-                    label for="username" 姓名*
-                    input type="text" required="true" x-moz-errormessage="请输入您的真实姓名" class="form-control" id="username" placeholder="请输入您的真实姓名" name="attendance[username]"
+                    label for="baby_name" 宝宝昵称*
+                    input type="text" required="true" x-moz-errormessage="请输入宝宝昵称" class="form-control" id="baby_name" placeholder="请输入宝宝昵称" name="attendance[baby_name]"
 
                   .form-group
-                    label for="phone_number" 手机号*
-                    input type="text" minlength="11" maxlength="11" required="true" placeholder="手机号将作为登陆账号" x-moz-errormessage="请输入合法的11位手机号(例如: 13512341234" name="attendance[phone_number]" pattern="^[0-9]+$" id="phone_number" class="form-control"
+                    label for="baby_age" 宝宝年龄*
+                    input type="number" min="0" step="1" required="true" placeholder="请输入宝宝年龄" x-moz-errormessage="请输入宝宝年龄" name="attendance[baby_age]" id="baby_age" class="form-control"
 
                   .form-group
-                    label for="email" 电子邮箱*
-                    input type="email" placeholder="通知会发送邮件" required="true" maxlength="50" x-moz-errormessage="请输入合法的电子邮件地址(例如: example@example.com)" pattern="^([A-Za-z0-9_\-\.])+\@(?!(?:[A-Za-z0-9_\-\.]+\.)?([A-Za-z]{2,4})\.\2)([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$" class="form-control" id="email" name="attendance[email]"
+                    label for="mother_name" 妈妈姓名*
+                    input type="text" required="true" x-moz-errormessage="请输入妈妈姓名" class="form-control" id="mother_name" placeholder="请输入妈妈姓名" name="attendance[mother_name]"
 
                   .form-group
-                    label for="adults_number" 成人数量
-                    select.form-control id="adults_number" name="attendance[adults_number]"
-                      option 1
-                      option 2
-                      option 3
-                      option 4
-                      option 5
-
+                    label for="phone_number" 妈妈手机号*
+                    input type="text" minlength="11" maxlength="11" required="true" placeholder="请输入妈妈手机号" x-moz-errormessage="请输入合法的11位手机号(例如: 13512341234" name="attendance[phone_number]" pattern="^[0-9]+$" id="phone_number" class="form-control"
 
                   .form-group
-                    label for="children_number" 儿童数量
-                    select.form-control id="children_number" name="attendance[children_number]"
-                      option 1
-                      option 2
-                      option 3
+                    label for="wechat_id" 微信ID*
+                    input type="text" required="true" x-moz-errormessage="请输入微信号" class="form-control" id="wechat_id" placeholder="请输入微信号" name="attendance[wechat_id]"
+
+                  .form-group
+                    label for="event_time_id" 报名时段
+                    select.form-control id="event_time_id" name="attendance[event_time_id]"
+                      - @event.event_times.each do |event_time|
+                        option value="" #{event_time.time}
 
                   .form-group
                     label
@@ -129,9 +120,7 @@
                 .col-xs-2.user-row-avatar
                   = image_tag avatar_placeholder_url, height: '50px', width: '50px'
                 .col-xs-10.user-row-info
-                  strong #{attendance.username}
-                  br
-                    span.text-muted #{attendance.adults_number}名成人，#{attendance.children_number}名儿童参加
+                  strong #{attendance.baby_name}
                 hr
 
   .intro.col-md-12.col-sm-12.col-xs-12.flex-order-4
