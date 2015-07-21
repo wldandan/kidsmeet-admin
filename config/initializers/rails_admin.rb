@@ -106,6 +106,8 @@ RailsAdmin.config do |config|
           bindings[:view].tag(:a, { :href => "/events/#{bindings[:object].id}.xls" }) << '下载'
         end
       end
+
+      field :goden_data_url
     end
 
     create do
@@ -127,6 +129,7 @@ RailsAdmin.config do |config|
       field :is_published
       field :valuable_items
       field :content, :ck_editor
+      field :goden_data_url
     end
 
     edit do
@@ -149,6 +152,7 @@ RailsAdmin.config do |config|
       field :is_published
       field :valuable_items
       field :content, :ck_editor
+      field :goden_data_url
     end
 
     show do
@@ -175,6 +179,7 @@ RailsAdmin.config do |config|
           (bindings[:view].tag(:div) << value.html_safe)
         end
       end
+      field :goden_data_url
     end
 
   end

@@ -81,6 +81,7 @@ zh-CN:
         is_published: 是否发布
         start_time: 开始时间
         end_time: 结束时间
+        goden_data_url: 金数据链接
       star_mother:
         id: 编号
         name: 姓名
