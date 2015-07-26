@@ -14,6 +14,7 @@ gem 'slim-rails'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
+gem 'httparty'
 
 # application
 gem 'rails_admin'
