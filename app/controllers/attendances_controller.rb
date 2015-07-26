@@ -4,6 +4,11 @@ class AttendancesController < ApplicationController
 
   def join
     @attendance = Attendance.create(attendance_params)
+
+    golden_data_url = Event.find(attendance_params['event_id']).golden_data_url
+    GodenDataService.get_form(golden_data_url)
+    GodenDataService.post_data(golden_data_url, attendance_params.except('event_id'))
+
     begin
       respond_to do |format|
         format.html { redirect_to @attendance.event, notice: '感谢您的关注，我们已收到您的报名信息，将尽快联系您！' }
