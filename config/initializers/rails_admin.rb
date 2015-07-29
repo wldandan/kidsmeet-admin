@@ -107,6 +107,8 @@ RailsAdmin.config do |config|
         end
       end
 
+      field :star_mother
+
       field :goden_data_url
     end
 
@@ -152,6 +154,7 @@ RailsAdmin.config do |config|
       field :is_published
       field :valuable_items
       field :content, :ck_editor
+      field :star_mother
       field :goden_data_url
     end
 
@@ -179,6 +182,7 @@ RailsAdmin.config do |config|
           (bindings[:view].tag(:div) << value.html_safe)
         end
       end
+      field :star_mother
       field :goden_data_url
     end
 
